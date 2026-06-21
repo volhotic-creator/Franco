@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard LUK — Publicaciones</title>
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --luk-red:    #c0001d;
+      --luk-dark:   #1a1a1a;
+      --luk-gray:   #f4f4f6;
+      --luk-border: #e0e0e6;
+      --luk-text:   #333;
+      --luk-muted:  #777;
+      --green:      #1a7a44;
+      --green-bg:   #e8f5ee;
+      --blue:       #1a5f9c;
+      --blue-bg:    #e8f0fb;
+      --orange:     #b85c00;
+      --orange-bg:  #fff3e0;
+      --radius:     10px;
+      --shadow:     0 2px 10px rgba(0,0,0,.08);
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--luk-gray);
+      color: var(--luk-text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: var(--luk-dark);
+      color: #fff;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.35);
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+    }
+    .luk-logo {
+      background: var(--luk-red);
+      color: #fff;
+      font-weight: 900;
+      font-size: 22px;
+      letter-spacing: 2px;
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+    .header-title { font-size: 15px; opacity: .75; }
+    .header-stats {
+      display: flex;
+      gap: 20px;
+      padding: 14px 0;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 22px; font-weight: 800; color: var(--luk-red); line-height: 1; }
+    .stat-label { font-size: 10px; opacity: .6; text-transform: uppercase; letter-spacing: .5px; }
+
+    /* ── Toolbar ── */
+    .toolbar {
+      background: #fff;
+      border-bottom: 1px solid var(--luk-border);
+      padding: 14px 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 66px;
+      z-index: 99;
+    }
+    .search-wrap { position: relative; flex: 1; min-width: 200px; }
+    .search-wrap svg {
+      position: absolute; left: 11px; top: 50%;
+      transform: translateY(-50%);
+      width: 16px; height: 16px; opacity: .45;
+    }
+    #search {
+      width: 100%; border: 1.5px solid var(--luk-border);
+      border-radius: 8px; padding: 8px 12px 8px 34px;
+      font-size: 14px; outline: none; transition: border-color .2s;
+    }
+    #search:focus { border-color: var(--luk-red); }
+    .filters { display: flex; gap: 6px; flex-wrap: wrap; }
+    .filter-btn {
+      border: 1.5px solid var(--luk-border);
+      background: #fff;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all .18s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover { border-color: var(--luk-red); color: var(--luk-red); }
+    .filter-btn.active {
+      background: var(--luk-red); border-color: var(--luk-red);
+      color: #fff; font-weight: 600;
+    }
+    #count-label {
+      margin-left: auto;
+      font-size: 13px;
+      color: var(--luk-muted);
+      white-space: nowrap;
+    }
+
+    /* ── Grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 18px;
+      padding: 20px 24px 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1.5px solid var(--luk-border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .card:hover {
+      box-shadow: 0 6px 22px rgba(0,0,0,.12);
+      transform: translateY(-2px);
+    }
+    .card-header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2e2e2e 100%);
+      padding: 14px 16px 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .cat-badge {
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      padding: 3px 8px;
+      border-radius: 12px;
+      margin-top: 2px;
+    }
+    .cat-kit   { background: var(--green-bg); color: var(--green); }
+    .cat-vol   { background: var(--blue-bg);  color: var(--blue);  }
+    .cat-bomba { background: var(--orange-bg);color: var(--orange);}
+    .card-title {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    /* ── Card Body ── */
+    .card-body { padding: 14px 16px; flex: 1; }
+    .fields { display: flex; flex-direction: column; gap: 8px; }
+    .field {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--luk-gray);
+      border-radius: 6px;
+      padding: 7px 10px;
+      border: 1px solid var(--luk-border);
+    }
+    .field-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: var(--luk-muted);
+      white-space: nowrap;
+      min-width: 90px;
+    }
+    .field-value {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--luk-dark);
+      flex: 1;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+    .field-value.na { color: #aaa; font-style: italic; font-family: inherit; font-weight: 400; }
+    .copy-btn {
+      background: none; border: none; cursor: pointer;
+      padding: 3px; border-radius: 4px;
+      color: var(--luk-muted); opacity: .6;
+      transition: all .15s;
+      flex-shrink: 0;
+    }
+    .copy-btn:hover { opacity: 1; color: var(--luk-red); }
+    .copy-btn.copied { color: var(--green); opacity: 1; }
+    .copy-btn svg { display: block; width: 14px; height: 14px; }
+
+    /* Stock badge */
+    .stock-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: inherit;
+    }
+    .stock-badge .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green);
+    }
+    .stock-low .dot { background: var(--orange); }
+
+    /* Fotos badge */
+    .fotos-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 12px; font-weight: 600;
+      color: var(--blue); font-family: inherit;
+    }
+
+    /* ── Card Footer ── */
+    .card-footer { padding: 12px 16px; border-top: 1px solid var(--luk-border); }
+    .copy-pub-btn {
+      width: 100%;
+      background: var(--luk-red);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: background .18s, transform .12s;
+      letter-spacing: .3px;
+    }
+    .copy-pub-btn:hover { background: #a0001a; }
+    .copy-pub-btn:active { transform: scale(.97); }
+    .copy-pub-btn.copied { background: var(--green); }
+    .copy-pub-btn svg { width: 15px; height: 15px; }
+
+    /* ── Toast ── */
+    #toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: var(--luk-dark); color: #fff;
+      padding: 10px 20px; border-radius: 8px;
+      font-size: 13px; font-weight: 600;
+      transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+      pointer-events: none; z-index: 9999;
+      white-space: nowrap;
+    }
+    #toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ── Empty ── */
+    #empty {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--luk-muted);
+      grid-column: 1/-1;
+    }
+    #empty svg { width: 52px; height: 52px; opacity: .3; margin-bottom: 12px; }
+    #empty p { font-size: 15px; }
+
+    @media (max-width: 600px) {
+      .header { padding: 0 14px; }
+      .toolbar { padding: 10px 14px; top: 0; position: static; }
+      .header { position: static; }
+      .grid { padding: 14px; gap: 14px; }
+      .header-stats { gap: 12px; }
+      .stat-num { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-brand">
+    <div class="luk-logo">LUK</div>
+    <div>
+      <div style="font-weight:700;font-size:16px;">Dashboard de Publicaciones</div>
+      <div class="header-title">Artículos con fotos disponibles · Marca LUK</div>
+    </div>
+  </div>
+  <div class="header-stats">
+    <div class="stat">
+      <div class="stat-num" id="stat-total">—</div>
+      <div class="stat-label">Total Artículos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-kit">—</div>
+      <div class="stat-label">Kits Embrague</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-vol">—</div>
+      <div class="stat-label">Volantes Bimasa</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-stock">—</div>
+      <div class="stat-label">Uds. en Stock</div>
+    </div>
+  </div>
+</header>
+
+<!-- TOOLBAR -->
+<div class="toolbar">
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="search" type="text" placeholder="Buscar por descripción, SKU o N° original…" autocomplete="off" />
+  </div>
+  <div class="filters">
+    <button class="filter-btn active" data-cat="todos">Todos</button>
+    <button class="filter-btn" data-cat="kit">Kit De Embrague</button>
+    <button class="filter-btn" data-cat="volante">Volante Bimasa</button>
+    <button class="filter-btn" data-cat="otros">Otros</button>
+  </div>
+  <span id="count-label"></span>
+</div>
+
+<!-- GRID -->
+<div class="grid" id="grid">
+  <div id="empty">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+    <p>No se encontraron artículos con ese criterio.</p>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast">¡Copiado!</div>
+
+<script>
+// ════════════════════════════════════════════════════════
+// DATOS — LUK (solo artículos con fotos OK)
+// ════════════════════════════════════════════════════════
+const productos = [
+  // ── KITS DE EMBRAGUE ──
+  {
+    sku: "511017610",
+    descripcion: "Bomba De Embrague Ford Focus",
+    oem: "1M517A543AA",
+    cantidad: 9,
+    fotos: 4,
+    categoria: "otros",
+    carpeta: "511017610"
+  },
+  {
+    sku: "511017610",
+    descripcion: "Cilindro Maestro De Embrague Ford Focus One",
+    oem: "1746859",
+    cantidad: 1,
+    fotos: 4,
+    categoria: "otros",
+    carpeta: "511017610"
+  },
+  {
+    sku: "623 3155 00",
+    descripcion: "Kit De Embrague",
+    oem: null,
+    cantidad: 3,
+    fotos: 6,
+    categoria: "kit",
+    carpeta: "623_3155_00"
+  },
+  {
+    sku: "623 3094 00",
+    descripcion: "Kit De Embrague Audi A3 2.0 FSI (230mm)",
+    oem: null,
+    cantidad: 20,
+    fotos: 6,
+    categoria: "kit",
+    carpeta: "623_3094_00"
+  },
+  {
+    sku: "624 3308 00",
+    descripcion: "Kit De Embrague Audi A4/A6 2.0 TDI (Disco 240mm)",
+    oem: null,
+    cantidad: 2,
+    fotos: 6,
+    categoria: "kit",
+    carpeta: "624_3308_00"
+  },
+  {
+    sku: "624 3075 00",
+    descripcion: "Kit De Embrague Audi A4/A6 2.5 TDI",
+    oem: null,
+    cantidad: 2,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "624_3075_00"
+  },
+  {
+    sku: "624 3037 00",
+    descripcion: "Kit De Embrague Audi A4/A6/Passat (240mm)",
+    oem: null,
+    cantidad: 5,
+    fotos: 6,
+    categoria: "kit",
+    carpeta: "624_3037_00"
+  },
+  {
+    sku: "622 0623 00",
+    descripcion: "Kit De Embrague Caddy/Transporter 1.9 TDI (ABL)",
+    oem: null,
+    cantidad: 9,
+    fotos: 4,
+    categoria: "kit",
+    carpeta: "622_0623_00"
+  },
+  {
+    sku: "417 0016 10",
+    descripcion: "Kit De Embrague con Volante Bimasa Bora 1.8 T",
+    oem: "06A105264M",
+    cantidad: 3,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "417_0016_10"
+  },
+  {
+    sku: "619008806",
+    descripcion: "Kit De Embrague Ford (190mm) + Ruleman Ford",
+    oem: "1572047",
+    cantidad: 1,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "619008806"
+  },
+  {
+    sku: "621 2369 00",
+    descripcion: "Kit De Embrague Ford Escort Classic",
+    oem: null,
+    cantidad: 4,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "621_2369_00"
+  },
+  {
+    sku: "622 2108 00",
+    descripcion: "Kit De Embrague Ford Escort/Courier/Fiesta 1.8 Diesel",
+    oem: null,
+    cantidad: 1,
+    fotos: 6,
+    categoria: "kit",
+    carpeta: "622_2108_00"
+  },
+  {
+    sku: "621 3011 09",
+    descripcion: "Kit De Embrague Ford Fiesta Max/Ecosport 1.4 TDCI",
+    oem: null,
+    cantidad: 1,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "621_3011_09"
+  },
+  {
+    sku: "622 0569 00",
+    descripcion: "Kit De Embrague Ford Fiesta/Courier 1.8 Diesel",
+    oem: null,
+    cantidad: 9,
+    fotos: 5,
+    categoria: "kit",
+    carpeta: "622_0569_00"
+  },
+  {
+    sku: "622 2414 09",
+    descripcion: "Kit De Embrague Ford Focus 1.8 16V (Disco 220mm)",
+    oem: null,
+    cantidad: 3,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "622_2414_09"
+  },
+  {
+    sku: "623 3124 09",
+    descripcion: "Kit De Embrague Ford Focus 1.8 TDCI 16V 2001→",
+    oem: null,
+    cantidad: 9,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "623_3124_09"
+  },
+  {
+    sku: "623 2197 09",
+    descripcion: "Kit De Embrague Ford Mondeo 1996 / 1.8 TD",
+    oem: null,
+    cantidad: 1,
+    fotos: 6,
+    categoria: "kit",
+    carpeta: "623_2197_09"
+  },
+  {
+    sku: "623 3123 09",
+    descripcion: "Kit De Embrague Ford Mondeo 2.0 16V",
+    oem: null,
+    cantidad: 1,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "623_3123_09"
+  },
+  {
+    sku: "624 2222 09",
+    descripcion: "Kit De Embrague Ford Mondeo 2.5 V6",
+    oem: null,
+    cantidad: 2,
+    fotos: 6,
+    categoria: "kit",
+    carpeta: "624_2222_09"
+  },
+  {
+    sku: "624 2048 09",
+    descripcion: "Kit De Embrague Ford Mondeo del 94 al 96",
+    oem: null,
+    cantidad: 1,
+    fotos: 6,
+    categoria: "kit",
+    carpeta: "624_2048_09"
+  },
+  {
+    sku: "624 3378 09",
+    descripcion: "Kit De Embrague Ford Mondeo/Focus II 1.8 TDCI",
+    oem: null,
+    cantidad: 3,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "624_3378_09"
+  },
+  {
+    sku: "624 3034 09",
+    descripcion: "Kit De Embrague Golf/Bora 1.8T 20V",
+    oem: null,
+    cantidad: 1,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "624_3034_09"
+  },
+  {
+    sku: "621 1332 09",
+    descripcion: "Kit De Embrague Seat Toledo/Cordoba/Golf (210mm)",
+    oem: null,
+    cantidad: 1,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "621_1332_09"
+  },
+  {
+    sku: "624 3126 09",
+    descripcion: "Kit De Embrague Sharan 1.8 20V",
+    oem: null,
+    cantidad: 3,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "624_3126_09"
+  },
+  {
+    sku: "624 3230 09",
+    descripcion: "Kit De Embrague Vento 2.0 TDI",
+    oem: null,
+    cantidad: 7,
+    fotos: 2,
+    categoria: "kit",
+    carpeta: "624_3230_09"
+  },
+  {
+    sku: "624 3279 09",
+    descripcion: "Kit De Embrague Vento 2.0 TFSI",
+    oem: null,
+    cantidad: 8,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "624_3279_09"
+  },
+  {
+    sku: "624 3474 09",
+    descripcion: "Kit De Embrague Vento/Passat/Amarok 2.0 TDI (CDBA)",
+    oem: null,
+    cantidad: 3,
+    fotos: 1,
+    categoria: "kit",
+    carpeta: "624_3474_09"
+  },
+  // ── VOLANTES BIMASA ──
+  {
+    sku: "415 0348 10",
+    descripcion: "Volante Bimasa Audi 3.2 (AUK-BKH)",
+    oem: "06E105266AA",
+    cantidad: 2,
+    fotos: 1,
+    categoria: "volante",
+    carpeta: "415_0348_10"
+  },
+  {
+    sku: "415 0497 09",
+    descripcion: "Volante Bimasa Audi A3 1.4 TFSI",
+    oem: "036105266C/D",
+    cantidad: 3,
+    fotos: 1,
+    categoria: "volante",
+    carpeta: "415_0497_09"
+  },
+  {
+    sku: "415 0500 09",
+    descripcion: "Volante Bimasa Audi A3 1.4 TFSI",
+    oem: "03F105266",
+    cantidad: 2,
+    fotos: 6,
+    categoria: "volante",
+    carpeta: "415_0500_09"
+  },
+  {
+    sku: "415 0330 10",
+    descripcion: "Volante Bimasa Audi A3 2.0 TFSI",
+    oem: "06F105266K/F",
+    cantidad: 10,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0330_10"
+  },
+  {
+    sku: "415 0149 10",
+    descripcion: "Volante Bimasa Audi A4 3.0 V6",
+    oem: "06C105266B",
+    cantidad: 2,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0149_10"
+  },
+  {
+    sku: "415 0350 10",
+    descripcion: "Volante Bimasa Audi A4 BEX",
+    oem: "06B105266B",
+    cantidad: 2,
+    fotos: 4,
+    categoria: "volante",
+    carpeta: "415_0350_10"
+  },
+  {
+    sku: "415 0127 10",
+    descripcion: "Volante Bimasa Audi A4 BFB",
+    oem: "058105266A",
+    cantidad: 2,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0127_10"
+  },
+  {
+    sku: "415 0145 10",
+    descripcion: "Volante Bimasa Audi A4/A5 2.5 TDI",
+    oem: "059105266E/T",
+    cantidad: 2,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0145_10"
+  },
+  {
+    sku: "415 0071 10",
+    descripcion: "Volante Bimasa Audi A4/A6 2.4/2.8 V6",
+    oem: "078105266M/G/AE",
+    cantidad: 2,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0071_10"
+  },
+  {
+    sku: "415 0165 10",
+    descripcion: "Volante Bimasa Audi TT / Audi A3 / Seat Leon 1.8T (AUQ)",
+    oem: "06A105266AA/AC",
+    cantidad: 4,
+    fotos: 1,
+    categoria: "volante",
+    carpeta: "415_0165_10"
+  },
+  {
+    sku: "415 0478 10",
+    descripcion: "Volante Bimasa Ford Focus M/N 1.8 DSL",
+    oem: "1352798",
+    cantidad: 4,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0478_10"
+  },
+  {
+    sku: "415 0181 10",
+    descripcion: "Volante Bimasa Ford Mondeo 2.0 TDCI",
+    oem: "1128990",
+    cantidad: 1,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0181_10"
+  },
+  {
+    sku: "415 0170 10",
+    descripcion: "Volante Bimasa Ford Transit",
+    oem: "4178966",
+    cantidad: 4,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0170_10"
+  },
+  {
+    sku: "415 0180 10",
+    descripcion: "Volante Bimasa Ford Transit M/N 2.4 16V",
+    oem: "4413743",
+    cantidad: 2,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0180_10"
+  },
+  {
+    sku: "415 0115 10",
+    descripcion: "Volante Bimasa Golf IV 2.8 V6",
+    oem: "021105266E/J/H",
+    cantidad: 1,
+    fotos: 6,
+    categoria: "volante",
+    carpeta: "415_0115_10"
+  },
+  {
+    sku: "415 0334 10",
+    descripcion: "Volante Bimasa Passat 1.8 TFSI",
+    oem: "06J105266J/B",
+    cantidad: 2,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0334_10"
+  },
+  {
+    sku: "415 0114 10",
+    descripcion: "Volante Bimasa Passat 1.9 TDI",
+    oem: "038105266K",
+    cantidad: 4,
+    fotos: 1,
+    categoria: "volante",
+    carpeta: "415_0114_10"
+  },
+  {
+    sku: "415 0548 09",
+    descripcion: "Volante Bimasa Passat 2.0 TDI",
+    oem: "03L105266AE/DC",
+    cantidad: 5,
+    fotos: 6,
+    categoria: "volante",
+    carpeta: "415_0548_09"
+  },
+  {
+    sku: "415 0231 10",
+    descripcion: "Volante Bimasa Passat / Audi A4 1.9 TDI",
+    oem: "038105266A",
+    cantidad: 5,
+    fotos: 4,
+    categoria: "volante",
+    carpeta: "415_0231_10"
+  },
+  {
+    sku: "415 0078 10",
+    descripcion: "Volante Bimasa Passat / Audi A4 TDI V6",
+    oem: "059105266A",
+    cantidad: 2,
+    fotos: 1,
+    categoria: "volante",
+    carpeta: "415_0078_10"
+  },
+  {
+    sku: "415 0059 10",
+    descripcion: "Volante Bimasa Sharan 1.9 TDI",
+    oem: null,
+    cantidad: 4,
+    fotos: 2,
+    categoria: "volante",
+    carpeta: "415_0059_10"
+  },
+  {
+    sku: "415 0457 10",
+    descripcion: "Volante Bimasa Tiguan",
+    oem: "03L105266Q",
+    cantidad: 3,
+    fotos: 1,
+    categoria: "volante",
+    carpeta: "415_0457_10"
+  }
+];
+
+// ════════════════════════════════════════════════════════
+// ÍCONOS SVG (inline)
+// ════════════════════════════════════════════════════════
+const ICON_COPY = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>`;
+const ICON_OK   = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>`;
+const ICON_CLIP = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>`;
+const ICON_PHOTO= `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`;
+
+// ════════════════════════════════════════════════════════
+// STATS
+// ════════════════════════════════════════════════════════
+const kits    = productos.filter(p => p.categoria === 'kit').length;
+const vols    = productos.filter(p => p.categoria === 'volante').length;
+const stock   = productos.reduce((s, p) => s + p.cantidad, 0);
+document.getElementById('stat-total').textContent = productos.length;
+document.getElementById('stat-kit').textContent   = kits;
+document.getElementById('stat-vol').textContent   = vols;
+document.getElementById('stat-stock').textContent  = stock;
+
+// ════════════════════════════════════════════════════════
+// RENDER
+// ════════════════════════════════════════════════════════
+function catLabel(c) {
+  if (c === 'kit')    return ['Kit Embrague', 'cat-kit'];
+  if (c === 'volante') return ['Volante Bimasa', 'cat-vol'];
+  return ['Otro', 'cat-bomba'];
+}
+
+function publicacionText(p) {
+  const oem = p.oem ? p.oem : '—';
+  const lines = [
+    `✅ ${p.descripcion.toUpperCase()} — MARCA LUK`,
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+    `🔩 N° LUK:       ${p.sku}`,
+    `📋 N° Original:  ${oem}`,
+    `📦 Stock:        ${p.cantidad} unidad${p.cantidad !== 1 ? 'es' : ''} disponible${p.cantidad !== 1 ? 's' : ''}`,
+    `🏷️ Marca:         LUK — Calidad Original`,
+    `📸 Fotos:         ${p.fotos} imagen${p.fotos !== 1 ? 'es' : ''} disponible${p.fotos !== 1 ? 's' : ''}`,
+    `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+    `💬 Consultar precio y disponibilidad`
+  ];
+  return lines.join('\n');
+}
+
+function renderCard(p, idx) {
+  const [label, cls] = catLabel(p.categoria);
+  const stockClass = p.cantidad <= 2 ? 'stock-low' : '';
+  const stockDot   = `<span class="stock-badge ${stockClass}"><span class="dot"></span>${p.cantidad} ud${p.cantidad !== 1 ? 's' : ''}.</span>`;
+  const fotosHtml  = `<span class="fotos-badge">${ICON_PHOTO} ${p.fotos} foto${p.fotos !== 1 ? 's' : ''}</span>`;
+  const oemVal     = p.oem
+    ? `<span class="field-value">${p.oem}</span>`
+    : `<span class="field-value na">Sin N° Original</span>`;
+
+  return `
+<div class="card" data-cat="${p.categoria}" data-idx="${idx}">
+  <div class="card-header">
+    <span class="cat-badge ${cls}">${label}</span>
+    <span class="card-title">${p.descripcion}</span>
+  </div>
+  <div class="card-body">
+    <div class="fields">
+      <div class="field">
+        <span class="field-label">N° LUK</span>
+        <span class="field-value">${p.sku}</span>
+        <button class="copy-btn" title="Copiar SKU" onclick="copiarCampo(this,'${p.sku}')">
+          ${ICON_COPY}
+        </button>
+      </div>
+      <div class="field">
+        <span class="field-label">N° Original</span>
+        ${oemVal}
+        ${p.oem ? `<button class="copy-btn" title="Copiar N° Original" onclick="copiarCampo(this,'${p.oem}')">${ICON_COPY}</button>` : ''}
+      </div>
+      <div class="field">
+        <span class="field-label">Stock</span>
+        <span class="field-value">${stockDot}</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Fotos</span>
+        <span class="field-value">${fotosHtml}</span>
+        <button class="copy-btn" title="Copiar carpeta" onclick="copiarCampo(this,'${p.carpeta}')">
+          ${ICON_COPY}
+        </button>
+      </div>
+      <div class="field">
+        <span class="field-label">Carpeta</span>
+        <span class="field-value" style="font-size:11px;color:#555;">${p.carpeta}</span>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="copy-pub-btn" onclick="copiarPublicacion(this, ${idx})">
+      ${ICON_CLIP}
+      Copiar Publicación Completa
+    </button>
+  </div>
+</div>`;
+}
+
+// ════════════════════════════════════════════════════════
+// FILTER & SEARCH
+// ════════════════════════════════════════════════════════
+let currentCat = 'todos';
+let currentQ   = '';
+
+function getFiltered() {
+  return productos.filter((p, i) => {
+    const catOk = currentCat === 'todos' || p.categoria === currentCat;
+    const q     = currentQ.toLowerCase();
+    const textOk = !q
+      || p.descripcion.toLowerCase().includes(q)
+      || p.sku.toLowerCase().includes(q)
+      || (p.oem && p.oem.toLowerCase().includes(q));
+    return catOk && textOk;
+  });
+}
+
+function renderGrid() {
+  const grid    = document.getElementById('grid');
+  const empty   = document.getElementById('empty');
+  const counter = document.getElementById('count-label');
+  const list    = getFiltered();
+
+  // clear existing cards (keep #empty)
+  Array.from(grid.querySelectorAll('.card')).forEach(c => c.remove());
+
+  if (list.length === 0) {
+    empty.style.display = 'block';
+    counter.textContent = '0 artículos';
+    return;
+  }
+  empty.style.display = 'none';
+  counter.textContent = `${list.length} artículo${list.length !== 1 ? 's' : ''}`;
+
+  const frag = document.createDocumentFragment();
+  list.forEach(p => {
+    const idx = productos.indexOf(p);
+    const div = document.createElement('div');
+    div.innerHTML = renderCard(p, idx);
+    frag.appendChild(div.firstElementChild);
+  });
+  grid.insertBefore(frag, empty);
+}
+
+// filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentCat = btn.dataset.cat;
+    renderGrid();
+  });
+});
+
+// search
+document.getElementById('search').addEventListener('input', e => {
+  currentQ = e.target.value.trim();
+  renderGrid();
+});
+
+// ════════════════════════════════════════════════════════
+// COPY HELPERS
+// ════════════════════════════════════════════════════════
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+async function copiar(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    return true;
+  }
+}
+
+function copiarCampo(btn, text) {
+  copiar(text).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = ICON_OK;
+    showToast('Copiado: ' + text);
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = ICON_COPY;
+    }, 1800);
+  });
+}
+
+function copiarPublicacion(btn, idx) {
+  const p = productos[idx];
+  const text = publicacionText(p);
+  copiar(text).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = ICON_OK + ' ¡Copiado!';
+    showToast('Publicación copiada al portapapeles');
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = ICON_CLIP + ' Copiar Publicación Completa';
+    }, 2000);
+  });
+}
+
+// ════════════════════════════════════════════════════════
+// INIT
+// ════════════════════════════════════════════════════════
+renderGrid();
+</script>
+</body>
+</html>
