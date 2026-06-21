@@ -610,18 +610,2060 @@ const DB = [
 ];
 
 // ════════════════════════════════════════════════════════
-//  FICHAS TÉCNICAS — se completarán con el Excel del scraping
-//  Estructura: { [id]: { titulo_ml, descripcion, compatibilidades, specs } }
+//  FICHAS TÉCNICAS — datos enriquecidos desde scraping Autodoc
 // ════════════════════════════════════════════════════════
-const FICHAS = {};
-// Cuando llegue el Excel, los datos se cargarán aquí.
-// Ejemplo de estructura esperada:
-// FICHAS[4] = {
-//   titulo_ml: "Kit Embrague Audi A3 2.0 FSI LUK 623309400 230mm",
-//   descripcion: "Kit de embrague original LUK...",
-//   compatibilidades: "Audi A3 (8P) 2.0 FSI 150cv 2003-2012\nSeat Leon...",
-//   specs: "Diámetro disco: 230mm\nPresión plato: 8500N\nMaterial: Orgánico"
-// };
+const FICHAS = {
+  3: {
+    titulo_ml: `Kit Embrague LUK 623 3155 00`,
+    descripcion: `KIT DE EMBRAGUE LUK - 623 3155 00
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Número de pieza: 623 3155 00
+- Marca: LUK
+
+VEHICULO COMPATIBLE:
+- Kit Embrague LUK 623 3155 00
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: ``,
+    specs: ``,
+    precio: 1096224,
+    ean: ``,
+    vcnt: 0,
+  },
+  4: {
+    titulo_ml: `Kit Embrague LUK 623 3094 00 Audi A3 230mm 2.0 FSI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 623 3094 00
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 7; Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Octavia 5e5; Audi A3 8va; Seat León 2; Octavia 1z5; Golf BA5; Golf 5 Plus; VW Caddy 3 Furgón; Touran 1t3; Passat B6; Seat León Mk3; VW Caddy 3; Seat Leon Mk3 ST; Skoda Octavia 2
+- Motores: 1.6 TDI; 1.4 TSI; 2.0 FSI 4motion; 1.9 TDI; 2.0 FSI; 2.0 TDI; 30 TDI; 2.0 FSI 4x4; 2.5; 30 TDi
+- Potencia del motor  caballos : 90-170 CV
+- Potencia  kilovatios : 66-125 kW
+- A o de fabricaci n: 2003-2026
+- N mero de art culo del fabricante: R374MK
+- N mero s  de pieza OE: 02A 141 165 M, 03G 141 015 N, 03L 141 025 K, 03G 141 015 G, 03G 141 015 F
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 7; Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Octavia 5e5; Audi A3 8va; Seat León 2; Octavia 1z5; Golf BA5; Golf 5 Plus; VW Caddy 3 Furgón; Touran 1t3; Passat B6; Seat León Mk3; VW Caddy 3; Seat Leon Mk3 ST; Skoda Octavia 2
+- Motores | 1.6 TDI; 1.4 TSI; 2.0 FSI 4motion; 1.9 TDI; 2.0 FSI; 2.0 TDI; 30 TDI; 2.0 FSI 4x4; 2.5; 30 TDi
+- Potencia del motor (caballos) | 90-170 CV
+- Potencia (kilovatios) | 66-125 kW
+- Año de fabricación | 2003-2026
+- Número de artículo del fabricante | R374MK
+- Número(s) de pieza OE | 02A 141 165 M, 03G 141 015 N, 03L 141 025 K, 03G 141 015 G, 03G 141 015 F
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 7; Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Octavia 5e5; Audi A3 8va; Seat León 2; Octavia 1z5; Golf BA5; Golf 5 Plus; VW Caddy 3 Furgón; Touran 1t3; Passat B6; Seat León Mk3; VW Caddy 3; Seat Leon Mk3 ST; Skoda Octavia 2
+- Motores | 1.6 TDI; 1.4 TSI; 2.0 FSI 4motion; 1.9 TDI; 2.0 FSI; 2.0 TDI; 30 TDI; 2.0 FSI 4x4; 2.5; 30 TDi
+- Potencia del motor (caballos) | 90-170 CV
+- Potencia (kilovatios) | 66-125 kW
+- Año de fabricación | 2003-2026
+- Número de artículo del fabricante | R374MK
+- Número(s) de pieza OE | 02A 141 165 M, 03G 141 015 N, 03L 141 025 K, 03G 141 015 G, 03G 141 015 F`,
+    specs: `Modelos de auto: Golf 7; Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Octavia 5e5; Audi A3 8va; Seat León 2; Octavia 1z5; Golf BA5; Golf 5 Plus; VW Caddy 3 Furgón; Touran 1t3; Passat B6; Seat León Mk3; VW Caddy 3; Seat Leon Mk3 ST; Skoda Octavia 2
+Motores: 1.6 TDI; 1.4 TSI; 2.0 FSI 4motion; 1.9 TDI; 2.0 FSI; 2.0 TDI; 30 TDI; 2.0 FSI 4x4; 2.5; 30 TDi
+Potencia (CV): 90-170 CV
+Potencia (kW): 66-125 kW
+Año fabricación: 2003-2026
+N° de artículo LUK: R374MK
+N° OEM: 02A 141 165 M, 03G 141 015 N, 03L 141 025 K, 03G 141 015 G, 03G 141 015 F`,
+    precio: 2545029,
+    ean: `4005108094629`,
+    vcnt: 7,
+  },
+  5: {
+    titulo_ml: `Kit Embrague LUK 624 3308 00 Audi A4 240mm 2.0 TDI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 3308 00
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A6 4f; Audi A4 B7 Avant; Audi A6 C6; Audi A4 B7; Audi A4 8h; Seat Exeo st; Skoda Superb 3u; Seat Exeo Berlina
+- Motores: 2.0 TDI; 2.0 TDI quattro; 2.0 TDI 16V
+- Potencia del motor  caballos : 120-143 CV
+- Potencia  kilovatios : 88-105 kW
+- A o de fabricaci n: 2004-2013
+- N mero de art culo del fabricante: R457MK
+- N mero s  de pieza OE: 03L 141 015 P, 03G 141 031 H, 012 141 165 E, 038 198 141 GX, 03G 141 031 P
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A6 4f; Audi A4 B7 Avant; Audi A6 C6; Audi A4 B7; Audi A4 8h; Seat Exeo st; Skoda Superb 3u; Seat Exeo Berlina
+- Motores | 2.0 TDI; 2.0 TDI quattro; 2.0 TDI 16V
+- Potencia del motor (caballos) | 120-143 CV
+- Potencia (kilovatios) | 88-105 kW
+- Año de fabricación | 2004-2013
+- Número de artículo del fabricante | R457MK
+- Número(s) de pieza OE | 03L 141 015 P, 03G 141 031 H, 012 141 165 E, 038 198 141 GX, 03G 141 031 P
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A6 4f; Audi A4 B7 Avant; Audi A6 C6; Audi A4 B7; Audi A4 8h; Seat Exeo st; Skoda Superb 3u; Seat Exeo Berlina
+- Motores | 2.0 TDI; 2.0 TDI quattro; 2.0 TDI 16V
+- Potencia del motor (caballos) | 120-143 CV
+- Potencia (kilovatios) | 88-105 kW
+- Año de fabricación | 2004-2013
+- Número de artículo del fabricante | R457MK
+- Número(s) de pieza OE | 03L 141 015 P, 03G 141 031 H, 012 141 165 E, 038 198 141 GX, 03G 141 031 P`,
+    specs: `Modelos de auto: Audi A6 4f; Audi A4 B7 Avant; Audi A6 C6; Audi A4 B7; Audi A4 8h; Seat Exeo st; Skoda Superb 3u; Seat Exeo Berlina
+Motores: 2.0 TDI; 2.0 TDI quattro; 2.0 TDI 16V
+Potencia (CV): 120-143 CV
+Potencia (kW): 88-105 kW
+Año fabricación: 2004-2013
+N° de artículo LUK: R457MK
+N° OEM: 03L 141 015 P, 03G 141 031 H, 012 141 165 E, 038 198 141 GX, 03G 141 031 P`,
+    precio: 1449931,
+    ean: `4005108550040`,
+    vcnt: 7,
+  },
+  6: {
+    titulo_ml: `Kit Embrague LUK 624 3075 00 Audi A4 240mm 2.5 TDI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 3075 00
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5; Skoda Superb 3u
+- Motores: 2.5 TDI; 2.5 TDI 4motion
+- Potencia del motor  caballos : 150-163 CV
+- Potencia  kilovatios : 110-120 kW
+- A o de fabricaci n: 2000-2005
+- N mero de art culo del fabricante: 624 3075 00
+- N mero s  de pieza OE: 012 141 165 E, 0B1 141 165, 01E 141 165 D, 06C 141 117, 059 141 031 J
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5; Skoda Superb 3u
+- Motores | 2.5 TDI; 2.5 TDI 4motion
+- Potencia del motor (caballos) | 150-163 CV
+- Potencia (kilovatios) | 110-120 kW
+- Año de fabricación | 2000-2005
+- Número de artículo del fabricante | 624 3075 00
+- Número(s) de pieza OE | 012 141 165 E, 0B1 141 165, 01E 141 165 D, 06C 141 117, 059 141 031 J
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5; Skoda Superb 3u
+- Motores | 2.5 TDI; 2.5 TDI 4motion
+- Potencia del motor (caballos) | 150-163 CV
+- Potencia (kilovatios) | 110-120 kW
+- Año de fabricación | 2000-2005
+- Número de artículo del fabricante | 624 3075 00
+- Número(s) de pieza OE | 012 141 165 E, 0B1 141 165, 01E 141 165 D, 06C 141 117, 059 141 031 J`,
+    specs: `Modelos de auto: Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5; Skoda Superb 3u
+Motores: 2.5 TDI; 2.5 TDI 4motion
+Potencia (CV): 150-163 CV
+Potencia (kW): 110-120 kW
+Año fabricación: 2000-2005
+N° de artículo LUK: 624 3075 00
+N° OEM: 012 141 165 E, 0B1 141 165, 01E 141 165 D, 06C 141 117, 059 141 031 J`,
+    precio: 1768064,
+    ean: `4005108216298`,
+    vcnt: 7,
+  },
+  7: {
+    titulo_ml: `Kit Embrague LUK 624 3037 00 Passat 240mm`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 3037 00
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A6 C5 Avant; Audi A6 C5
+- Motores: 1.9 TDI quattro; 1.9 TDI; 1.9 TDI 4motion
+- Potencia del motor  caballos : 130 CV
+- Potencia  kilovatios : 96 kW
+- A o de fabricaci n: 2000-2005
+- N mero de art culo del fabricante: R377MK
+- N mero s  de pieza OE: 038 141 032 Q, 012 141 165 E, 0B1 141 165, 01E 141 165 D, 012 141 165 A
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A6 C5 Avant; Audi A6 C5
+- Motores | 1.9 TDI quattro; 1.9 TDI; 1.9 TDI 4motion
+- Potencia del motor (caballos) | 130 CV
+- Potencia (kilovatios) | 96 kW
+- Año de fabricación | 2000-2005
+- Número de artículo del fabricante | R377MK
+- Número(s) de pieza OE | 038 141 032 Q, 012 141 165 E, 0B1 141 165, 01E 141 165 D, 012 141 165 A
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A6 C5 Avant; Audi A6 C5
+- Motores | 1.9 TDI quattro; 1.9 TDI; 1.9 TDI 4motion
+- Potencia del motor (caballos) | 130 CV
+- Potencia (kilovatios) | 96 kW
+- Año de fabricación | 2000-2005
+- Número de artículo del fabricante | R377MK
+- Número(s) de pieza OE | 038 141 032 Q, 012 141 165 E, 0B1 141 165, 01E 141 165 D, 012 141 165 A`,
+    specs: `Modelos de auto: Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A6 C5 Avant; Audi A6 C5
+Motores: 1.9 TDI quattro; 1.9 TDI; 1.9 TDI 4motion
+Potencia (CV): 130 CV
+Potencia (kW): 96 kW
+Año fabricación: 2000-2005
+N° de artículo LUK: R377MK
+N° OEM: 038 141 032 Q, 012 141 165 E, 0B1 141 165, 01E 141 165 D, 012 141 165 A`,
+    precio: 1844730,
+    ean: `4005108223029`,
+    vcnt: 7,
+  },
+  8: {
+    titulo_ml: `Kit Embrague LUK 622 0623 00 Caddy 220mm 1.9 TDI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 622 0623 00
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: VW T4 Transporter; Golf Mk3; VW T4; Passat 3a5; VW T4 Camión de plataforma; Golf 3 Familiar; VW Passat B4 35i
+- Motores: 1.9 TD; 1.9 D; 1.8 Syncro; 1.6; 1.8; 1.6 TD
+- Potencia del motor  caballos : 60-112 CV
+- Potencia  kilovatios : 44-82 kW
+- A o de fabricaci n: 1988-2003
+- N mero de art culo del fabricante: 622 0623 00
+- N mero s  de pieza OE: 02A 141 165 M, 02A 141 165 A, 02A 141 165 G, 02A 141 165 D, 028 198 141 AX
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | VW T4 Transporter; Golf Mk3; VW T4; Passat 3a5; VW T4 Camión de plataforma; Golf 3 Familiar; VW Passat B4 35i
+- Motores | 1.9 TD; 1.9 D; 1.8 Syncro; 1.6; 1.8; 1.6 TD
+- Potencia del motor (caballos) | 60-112 CV
+- Potencia (kilovatios) | 44-82 kW
+- Año de fabricación | 1988-2003
+- Número de artículo del fabricante | 622 0623 00
+- Número(s) de pieza OE | 02A 141 165 M, 02A 141 165 A, 02A 141 165 G, 02A 141 165 D, 028 198 141 AX
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | VW T4 Transporter; Golf Mk3; VW T4; Passat 3a5; VW T4 Camión de plataforma; Golf 3 Familiar; VW Passat B4 35i
+- Motores | 1.9 TD; 1.9 D; 1.8 Syncro; 1.6; 1.8; 1.6 TD
+- Potencia del motor (caballos) | 60-112 CV
+- Potencia (kilovatios) | 44-82 kW
+- Año de fabricación | 1988-2003
+- Número de artículo del fabricante | 622 0623 00
+- Número(s) de pieza OE | 02A 141 165 M, 02A 141 165 A, 02A 141 165 G, 02A 141 165 D, 028 198 141 AX`,
+    specs: `Modelos de auto: VW T4 Transporter; Golf Mk3; VW T4; Passat 3a5; VW T4 Camión de plataforma; Golf 3 Familiar; VW Passat B4 35i
+Motores: 1.9 TD; 1.9 D; 1.8 Syncro; 1.6; 1.8; 1.6 TD
+Potencia (CV): 60-112 CV
+Potencia (kW): 44-82 kW
+Año fabricación: 1988-2003
+N° de artículo LUK: 622 0623 00
+N° OEM: 02A 141 165 M, 02A 141 165 A, 02A 141 165 G, 02A 141 165 D, 028 198 141 AX`,
+    precio: 1670344,
+    ean: `4005108097750`,
+    vcnt: 7,
+  },
+  9: {
+    titulo_ml: `Kit Embrague LUK 417 0016 10 Bora 1.8 T`,
+    descripcion: `KIT DE EMBRAGUE LUK - 417 0016 10
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 4; Polo 6R; Polo 9N; Seat Ibiza 6L; Audi A3 8L; Golf Mk3; Seat Ibiza 6J; Seat Leon Mk1; Fabia 2 (542); VW Golf 4 Variant; Audi TT 8N; Fabia 2 (545); Seat Ibiza IV Sportcoupe; Golf 3 Cabrio; Audi A1 8x; Seat Ibiza 6K; VW New Beetle Cabrio; Skoda Octavia 1u; VW Bora 1j2; Skoda Octavia 1u5
+- Motores: 1.9 TDI; 1.9 TDI 4motion; 1.8 T; 1.6 TDI; 1.8 GTi Cup Edition; 1.8 GTI; 1.8 T FR; 1.8 T Cupra R; 1.8 T quattro; 1.9 TDI Syncro; 1.8 T 20V Cupra; 1.8 T 4x4; RS 1.8 T; 1.9 TDI 4x4; 110 1.9 TDI; 90 1.9 TDI
+- Potencia del motor  caballos : 75-190 CV
+- Potencia  kilovatios : 55-140 kW
+- A o de fabricaci n: 1995-2015
+- N mero de art culo del fabricante: 417 0016 10
+- N mero s  de pieza OE: 06A 105 264 M
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 4; Polo 6R; Polo 9N; Seat Ibiza 6L; Audi A3 8L; Golf Mk3; Seat Ibiza 6J; Seat Leon Mk1; Fabia 2 (542); VW Golf 4 Variant; Audi TT 8N; Fabia 2 (545); Seat Ibiza IV Sportcoupe; Golf 3 Cabrio; Audi A1 8x; Seat Ibiza 6K; VW New Beetle Cabrio; Skoda Octavia 1u; VW Bora 1j2; Skoda Octavia 1u5
+- Motores | 1.9 TDI; 1.9 TDI 4motion; 1.8 T; 1.6 TDI; 1.8 GTi Cup Edition; 1.8 GTI; 1.8 T FR; 1.8 T Cupra R; 1.8 T quattro; 1.9 TDI Syncro; 1.8 T 20V Cupra; 1.8 T 4x4; RS 1.8 T; 1.9 TDI 4x4; 110 1.9 TDI; 90 1.9 TDI
+- Potencia del motor (caballos) | 75-190 CV
+- Potencia (kilovatios) | 55-140 kW
+- Año de fabricación | 1995-2015
+- Número de artículo del fabricante | 417 0016 10
+- Número(s) de pieza OE | 06A 105 264 M
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 4; Polo 6R; Polo 9N; Seat Ibiza 6L; Audi A3 8L; Golf Mk3; Seat Ibiza 6J; Seat Leon Mk1; Fabia 2 (542); VW Golf 4 Variant; Audi TT 8N; Fabia 2 (545); Seat Ibiza IV Sportcoupe; Golf 3 Cabrio; Audi A1 8x; Seat Ibiza 6K; VW New Beetle Cabrio; Skoda Octavia 1u; VW Bora 1j2; Skoda Octavia 1u5
+- Motores | 1.9 TDI; 1.9 TDI 4motion; 1.8 T; 1.6 TDI; 1.8 GTi Cup Edition; 1.8 GTI; 1.8 T FR; 1.8 T Cupra R; 1.8 T quattro; 1.9 TDI Syncro; 1.8 T 20V Cupra; 1.8 T 4x4; RS 1.8 T; 1.9 TDI 4x4; 110 1.9 TDI; 90 1.9 TDI
+- Potencia del motor (caballos) | 75-190 CV
+- Potencia (kilovatios) | 55-140 kW
+- Año de fabricación | 1995-2015
+- Número de artículo del fabricante | 417 0016 10
+- Número(s) de pieza OE | 06A 105 264 M`,
+    specs: `Modelos de auto: Golf 4; Polo 6R; Polo 9N; Seat Ibiza 6L; Audi A3 8L; Golf Mk3; Seat Ibiza 6J; Seat Leon Mk1; Fabia 2 (542); VW Golf 4 Variant; Audi TT 8N; Fabia 2 (545); Seat Ibiza IV Sportcoupe; Golf 3 Cabrio; Audi A1 8x; Seat Ibiza 6K; VW New Beetle Cabrio; Skoda Octavia 1u; VW Bora 1j2; Skoda Octavia 1u5
+Motores: 1.9 TDI; 1.9 TDI 4motion; 1.8 T; 1.6 TDI; 1.8 GTi Cup Edition; 1.8 GTI; 1.8 T FR; 1.8 T Cupra R; 1.8 T quattro; 1.9 TDI Syncro; 1.8 T 20V Cupra; 1.8 T 4x4; RS 1.8 T; 1.9 TDI 4x4; 110 1.9 TDI; 90 1.9 TDI
+Potencia (CV): 75-190 CV
+Potencia (kW): 55-140 kW
+Año fabricación: 1995-2015
+N° de artículo LUK: 417 0016 10
+N° OEM: 06A 105 264 M`,
+    precio: 822885,
+    ean: `4005108181725`,
+    vcnt: 7,
+  },
+  10: {
+    titulo_ml: `Kit Embrague LUK 619008806 190mm`,
+    descripcion: `KIT DE EMBRAGUE LUK - 619008806
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Fiesta Mk3; Ford Fiesta Mk1; Ford Fiesta Mk2; Ford Escort GAF; Ford Escort Mk3; Ford Orion 2; Ford Escort MK3 Cabrio; Escort Express '86 (ALF); ESCORT 3 Kombi (AWA); Ford Fiesta Mk2 Furgón; Ford Escort MK4 Familiar; Escort Express III
+- Motores: 1.0; 1.6 XR2; 1.3; 1.4; 1.1
+- Potencia del motor  caballos : 45-84 CV
+- Potencia  kilovatios : 33-62 kW
+- A o de fabricaci n: 1977-1995
+- N mero de art culo del fabricante: 619 0088 06
+- N mero s  de pieza OE: 1643771, ECB105, 85FB 7548 AA, 6846395, 5018851
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Fiesta Mk3; Ford Fiesta Mk1; Ford Fiesta Mk2; Ford Escort GAF; Ford Escort Mk3; Ford Orion 2; Ford Escort MK3 Cabrio; Escort Express '86 (ALF); ESCORT 3 Kombi (AWA); Ford Fiesta Mk2 Furgón; Ford Escort MK4 Familiar; Escort Express III
+- Motores | 1.0; 1.6 XR2; 1.3; 1.4; 1.1
+- Potencia del motor (caballos) | 45-84 CV
+- Potencia (kilovatios) | 33-62 kW
+- Año de fabricación | 1977-1995
+- Número de artículo del fabricante | 619 0088 06
+- Número(s) de pieza OE | 1643771, ECB105, 85FB 7548 AA, 6846395, 5018851
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Fiesta Mk3; Ford Fiesta Mk1; Ford Fiesta Mk2; Ford Escort GAF; Ford Escort Mk3; Ford Orion 2; Ford Escort MK3 Cabrio; Escort Express '86 (ALF); ESCORT 3 Kombi (AWA); Ford Fiesta Mk2 Furgón; Ford Escort MK4 Familiar; Escort Express III
+- Motores | 1.0; 1.6 XR2; 1.3; 1.4; 1.1
+- Potencia del motor (caballos) | 45-84 CV
+- Potencia (kilovatios) | 33-62 kW
+- Año de fabricación | 1977-1995
+- Número de artículo del fabricante | 619 0088 06
+- Número(s) de pieza OE | 1643771, ECB105, 85FB 7548 AA, 6846395, 5018851`,
+    specs: `Modelos de auto: Ford Fiesta Mk3; Ford Fiesta Mk1; Ford Fiesta Mk2; Ford Escort GAF; Ford Escort Mk3; Ford Orion 2; Ford Escort MK3 Cabrio; Escort Express '86 (ALF); ESCORT 3 Kombi (AWA); Ford Fiesta Mk2 Furgón; Ford Escort MK4 Familiar; Escort Express III
+Motores: 1.0; 1.6 XR2; 1.3; 1.4; 1.1
+Potencia (CV): 45-84 CV
+Potencia (kW): 33-62 kW
+Año fabricación: 1977-1995
+N° de artículo LUK: 619 0088 06
+N° OEM: 1643771, ECB105, 85FB 7548 AA, 6846395, 5018851`,
+    precio: 359370,
+    ean: `4005108056115`,
+    vcnt: 7,
+  },
+  11: {
+    titulo_ml: `Kit Embrague LUK 621 2369 00 Ford Escort 210mm`,
+    descripcion: `KIT DE EMBRAGUE LUK - 621 2369 00
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; Ford Escort MK7 Cabrio; ESCORT 7 (GAL; AFL); Ford Escort Classic; Ford Escort Classic Turnier ANL
+- Motores: 1.6 16V; 1.8 16V; 1.8 16V XR3i; 1.6 16V XR3i; 1.6 i 16V
+- Potencia del motor  caballos : 90-115 CV
+- Potencia  kilovatios : 66-85 kW
+- A o de fabricaci n: 1995-2000
+- N mero de art culo del fabricante: 621 2369 00
+- N mero s  de pieza OE: 7166796, 1057539, 91AB 7548 BB, 1057559, 1056445
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; Ford Escort MK7 Cabrio; ESCORT 7 (GAL; AFL); Ford Escort Classic; Ford Escort Classic Turnier ANL
+- Motores | 1.6 16V; 1.8 16V; 1.8 16V XR3i; 1.6 16V XR3i; 1.6 i 16V
+- Potencia del motor (caballos) | 90-115 CV
+- Potencia (kilovatios) | 66-85 kW
+- Año de fabricación | 1995-2000
+- Número de artículo del fabricante | 621 2369 00
+- Número(s) de pieza OE | 7166796, 1057539, 91AB 7548 BB, 1057559, 1056445
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; Ford Escort MK7 Cabrio; ESCORT 7 (GAL; AFL); Ford Escort Classic; Ford Escort Classic Turnier ANL
+- Motores | 1.6 16V; 1.8 16V; 1.8 16V XR3i; 1.6 16V XR3i; 1.6 i 16V
+- Potencia del motor (caballos) | 90-115 CV
+- Potencia (kilovatios) | 66-85 kW
+- Año de fabricación | 1995-2000
+- Número de artículo del fabricante | 621 2369 00
+- Número(s) de pieza OE | 7166796, 1057539, 91AB 7548 BB, 1057559, 1056445`,
+    specs: `Modelos de auto: Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; Ford Escort MK7 Cabrio; ESCORT 7 (GAL; AFL); Ford Escort Classic; Ford Escort Classic Turnier ANL
+Motores: 1.6 16V; 1.8 16V; 1.8 16V XR3i; 1.6 16V XR3i; 1.6 i 16V
+Potencia (CV): 90-115 CV
+Potencia (kW): 66-85 kW
+Año fabricación: 1995-2000
+N° de artículo LUK: 621 2369 00
+N° OEM: 7166796, 1057539, 91AB 7548 BB, 1057559, 1056445`,
+    precio: 428195,
+    ean: `4005108064646`,
+    vcnt: 7,
+  },
+  12: {
+    titulo_ml: `Kit Embrague LUK 622 2108 00 Ford Escort`,
+    descripcion: `KIT DE EMBRAGUE LUK - 622 2108 00
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Fiesta Mk3; Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; ESCORT 7 (GAL; AFL); Fiesta Mk3 Courier (F3L; F5L); Ford Escort AVL; Ford Fiesta Mk2 Furgón
+- Motores: 1.8 D
+- Potencia del motor  caballos : 60 CV
+- Potencia  kilovatios : 44 kW
+- A o de fabricaci n: 1989-2000
+- N mero de art culo del fabricante: 622 2108 00
+- N mero s  de pieza OE: 7166796, 91AB 7548 BB, 1007484, 93BG 7563 BA, 93BG 7563 AA
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Fiesta Mk3; Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; ESCORT 7 (GAL; AFL); Fiesta Mk3 Courier (F3L; F5L); Ford Escort AVL; Ford Fiesta Mk2 Furgón
+- Motores | 1.8 D
+- Potencia del motor (caballos) | 60 CV
+- Potencia (kilovatios) | 44 kW
+- Año de fabricación | 1989-2000
+- Número de artículo del fabricante | 622 2108 00
+- Número(s) de pieza OE | 7166796, 91AB 7548 BB, 1007484, 93BG 7563 BA, 93BG 7563 AA
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Fiesta Mk3; Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; ESCORT 7 (GAL; AFL); Fiesta Mk3 Courier (F3L; F5L); Ford Escort AVL; Ford Fiesta Mk2 Furgón
+- Motores | 1.8 D
+- Potencia del motor (caballos) | 60 CV
+- Potencia (kilovatios) | 44 kW
+- Año de fabricación | 1989-2000
+- Número de artículo del fabricante | 622 2108 00
+- Número(s) de pieza OE | 7166796, 91AB 7548 BB, 1007484, 93BG 7563 BA, 93BG 7563 AA`,
+    specs: `Modelos de auto: Ford Fiesta Mk3; Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; ESCORT 7 (GAL; AFL); Fiesta Mk3 Courier (F3L; F5L); Ford Escort AVL; Ford Fiesta Mk2 Furgón
+Motores: 1.8 D
+Potencia (CV): 60 CV
+Potencia (kW): 44 kW
+Año fabricación: 1989-2000
+N° de artículo LUK: 622 2108 00
+N° OEM: 7166796, 91AB 7548 BB, 1007484, 93BG 7563 BA, 93BG 7563 AA`,
+    precio: 903580,
+    ean: `4005108031303`,
+    vcnt: 7,
+  },
+  13: {
+    titulo_ml: `Kit Embrague LUK 621 3011 09 Ford Fiesta 210mm 1.4 TDCI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 621 3011 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Fiesta Mk5; Ford Fusion ju2; Mazda 2 DY; Ford Fiesta Mk5 Furgón
+- Motores: 1.4 TDCi; 1.4 CD
+- Potencia del motor  caballos : 68 CV
+- Potencia  kilovatios : 50 kW
+- A o de fabricaci n: 2001-2012
+- N mero de art culo del fabricante: 621 3011 09
+- N mero s  de pieza OE: 1374998, 1423906, 1204231, 2S61 7563 AB, 1204232
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Fiesta Mk5; Ford Fusion ju2; Mazda 2 DY; Ford Fiesta Mk5 Furgón
+- Motores | 1.4 TDCi; 1.4 CD
+- Potencia del motor (caballos) | 68 CV
+- Potencia (kilovatios) | 50 kW
+- Año de fabricación | 2001-2012
+- Número de artículo del fabricante | 621 3011 09
+- Número(s) de pieza OE | 1374998, 1423906, 1204231, 2S61 7563 AB, 1204232
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Fiesta Mk5; Ford Fusion ju2; Mazda 2 DY; Ford Fiesta Mk5 Furgón
+- Motores | 1.4 TDCi; 1.4 CD
+- Potencia del motor (caballos) | 68 CV
+- Potencia (kilovatios) | 50 kW
+- Año de fabricación | 2001-2012
+- Número de artículo del fabricante | 621 3011 09
+- Número(s) de pieza OE | 1374998, 1423906, 1204231, 2S61 7563 AB, 1204232`,
+    specs: `Modelos de auto: Ford Fiesta Mk5; Ford Fusion ju2; Mazda 2 DY; Ford Fiesta Mk5 Furgón
+Motores: 1.4 TDCi; 1.4 CD
+Potencia (CV): 68 CV
+Potencia (kW): 50 kW
+Año fabricación: 2001-2012
+N° de artículo LUK: 621 3011 09
+N° OEM: 1374998, 1423906, 1204231, 2S61 7563 AB, 1204232`,
+    precio: 359370,
+    ean: `4005108235763`,
+    vcnt: 7,
+  },
+  14: {
+    titulo_ml: `Kit Embrague LUK 622 0569 00 Ford Fiesta 220mm`,
+    descripcion: `KIT DE EMBRAGUE LUK - 622 0569 00
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Fiesta Mk3; Ford Escort GAF; Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; Escort 5 (AAL; ABL); ESCORT 7 (GAL; AFL); Ford Orion 2; Fiesta Mk3 Courier (F3L; F5L); Ford Escort AVL; ORION 3 (GAL); Escort 5 (ANL); Ford Escort VI Berlina; Escort Express '91 (AVF); Escort Express '86 (ALF); Ford Fiesta Mk2 Furgón; Ford Escort MK4 Familiar
+- Motores: 1.8 D
+- Potencia del motor  caballos : 60 CV
+- Potencia  kilovatios : 44 kW
+- A o de fabricaci n: 1988-2000
+- N mero de art culo del fabricante: 622 0569 00
+- N mero s  de pieza OE: 5022644, ECB105, 85FB 7548 AA, 6846395, 1007484
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Fiesta Mk3; Ford Escort GAF; Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; Escort 5 (AAL; ABL); ESCORT 7 (GAL; AFL); Ford Orion 2; Fiesta Mk3 Courier (F3L; F5L); Ford Escort AVL; ORION 3 (GAL); Escort 5 (ANL); Ford Escort VI Berlina; Escort Express '91 (AVF); Escort Express '86 (ALF); Ford Fiesta Mk2 Furgón; Ford Escort MK4 Familiar
+- Motores | 1.8 D
+- Potencia del motor (caballos) | 60 CV
+- Potencia (kilovatios) | 44 kW
+- Año de fabricación | 1988-2000
+- Número de artículo del fabricante | 622 0569 00
+- Número(s) de pieza OE | 5022644, ECB105, 85FB 7548 AA, 6846395, 1007484
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Fiesta Mk3; Ford Escort GAF; Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; Escort 5 (AAL; ABL); ESCORT 7 (GAL; AFL); Ford Orion 2; Fiesta Mk3 Courier (F3L; F5L); Ford Escort AVL; ORION 3 (GAL); Escort 5 (ANL); Ford Escort VI Berlina; Escort Express '91 (AVF); Escort Express '86 (ALF); Ford Fiesta Mk2 Furgón; Ford Escort MK4 Familiar
+- Motores | 1.8 D
+- Potencia del motor (caballos) | 60 CV
+- Potencia (kilovatios) | 44 kW
+- Año de fabricación | 1988-2000
+- Número de artículo del fabricante | 622 0569 00
+- Número(s) de pieza OE | 5022644, ECB105, 85FB 7548 AA, 6846395, 1007484`,
+    specs: `Modelos de auto: Ford Fiesta Mk3; Ford Escort GAF; Escort 6 (GAL; AAL; ABL); Ford Escort VII Familiar; Escort 5 (AAL; ABL); ESCORT 7 (GAL; AFL); Ford Orion 2; Fiesta Mk3 Courier (F3L; F5L); Ford Escort AVL; ORION 3 (GAL); Escort 5 (ANL); Ford Escort VI Berlina; Escort Express '91 (AVF); Escort Express '86 (ALF); Ford Fiesta Mk2 Furgón; Ford Escort MK4 Familiar
+Motores: 1.8 D
+Potencia (CV): 60 CV
+Potencia (kW): 44 kW
+Año fabricación: 1988-2000
+N° de artículo LUK: 622 0569 00
+N° OEM: 5022644, ECB105, 85FB 7548 AA, 6846395, 1007484`,
+    precio: 861762,
+    ean: `4005108091024`,
+    vcnt: 7,
+  },
+  15: {
+    titulo_ml: `Kit Embrague LUK 622 2414 09 Ford Focus 220mm 1.8 16V`,
+    descripcion: `KIT DE EMBRAGUE LUK - 622 2414 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Focus Mk1; Ford C-Max DM2; Ford Focus dnw; Ford Focus Mk1 Berlina; Focus Mk1 Furgoneta / Familiar (DNW)
+- Motores: 1.8 16V BiFuel; 1.4 16V; 1.6 16V Flexifuel; 1.8 16V; 1.6 16V; 1.6; 1.8 BiFuel; 1.8; 1.4
+- Potencia del motor  caballos : 75-116 CV
+- Potencia  kilovatios : 55-85 kW
+- A o de fabricaci n: 1998-2007
+- N mero de art culo del fabricante: R339MK
+- N mero s  de pieza OE: 1252272, 1354396, 3S41-7550B-1A, 3S41-7540B-1A, 1077991
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Focus Mk1; Ford C-Max DM2; Ford Focus dnw; Ford Focus Mk1 Berlina; Focus Mk1 Furgoneta / Familiar (DNW)
+- Motores | 1.8 16V BiFuel; 1.4 16V; 1.6 16V Flexifuel; 1.8 16V; 1.6 16V; 1.6; 1.8 BiFuel; 1.8; 1.4
+- Potencia del motor (caballos) | 75-116 CV
+- Potencia (kilovatios) | 55-85 kW
+- Año de fabricación | 1998-2007
+- Número de artículo del fabricante | R339MK
+- Número(s) de pieza OE | 1252272, 1354396, 3S41-7550B-1A, 3S41-7540B-1A, 1077991
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Focus Mk1; Ford C-Max DM2; Ford Focus dnw; Ford Focus Mk1 Berlina; Focus Mk1 Furgoneta / Familiar (DNW)
+- Motores | 1.8 16V BiFuel; 1.4 16V; 1.6 16V Flexifuel; 1.8 16V; 1.6 16V; 1.6; 1.8 BiFuel; 1.8; 1.4
+- Potencia del motor (caballos) | 75-116 CV
+- Potencia (kilovatios) | 55-85 kW
+- Año de fabricación | 1998-2007
+- Número de artículo del fabricante | R339MK
+- Número(s) de pieza OE | 1252272, 1354396, 3S41-7550B-1A, 3S41-7540B-1A, 1077991`,
+    specs: `Modelos de auto: Ford Focus Mk1; Ford C-Max DM2; Ford Focus dnw; Ford Focus Mk1 Berlina; Focus Mk1 Furgoneta / Familiar (DNW)
+Motores: 1.8 16V BiFuel; 1.4 16V; 1.6 16V Flexifuel; 1.8 16V; 1.6 16V; 1.6; 1.8 BiFuel; 1.8; 1.4
+Potencia (CV): 75-116 CV
+Potencia (kW): 55-85 kW
+Año fabricación: 1998-2007
+N° de artículo LUK: R339MK
+N° OEM: 1252272, 1354396, 3S41-7550B-1A, 3S41-7540B-1A, 1077991`,
+    precio: 825280,
+    ean: `4005108123701`,
+    vcnt: 7,
+  },
+  16: {
+    titulo_ml: `Kit Embrague LUK 623 3124 09 Ford Focus 230mm 1.8 TDCI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 623 3124 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Focus Mk1; Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Ford Focus dnw; Ford Transit Connect mk1; Ford Mondeo Mk3; Tourneo Connect Furgoneta; Ford Focus Mk1 Berlina; Focus Mk1 Furgoneta / Familiar (DNW)
+- Motores: 1.8 TDCi; 2.0 16V DI / TDDi / TDCi
+- Potencia del motor  caballos : 90-116 CV
+- Potencia  kilovatios : 66-85 kW
+- A o de fabricaci n: 2000-2013
+- N mero de art culo del fabricante: R395MK
+- N mero s  de pieza OE: 1307950, 1354394, 3S41-7550F-1A, 3S41-7540F-1A, 1139658
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Focus Mk1; Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Ford Focus dnw; Ford Transit Connect mk1; Ford Mondeo Mk3; Tourneo Connect Furgoneta; Ford Focus Mk1 Berlina; Focus Mk1 Furgoneta / Familiar (DNW)
+- Motores | 1.8 TDCi; 2.0 16V DI / TDDi / TDCi
+- Potencia del motor (caballos) | 90-116 CV
+- Potencia (kilovatios) | 66-85 kW
+- Año de fabricación | 2000-2013
+- Número de artículo del fabricante | R395MK
+- Número(s) de pieza OE | 1307950, 1354394, 3S41-7550F-1A, 3S41-7540F-1A, 1139658
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Focus Mk1; Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Ford Focus dnw; Ford Transit Connect mk1; Ford Mondeo Mk3; Tourneo Connect Furgoneta; Ford Focus Mk1 Berlina; Focus Mk1 Furgoneta / Familiar (DNW)
+- Motores | 1.8 TDCi; 2.0 16V DI / TDDi / TDCi
+- Potencia del motor (caballos) | 90-116 CV
+- Potencia (kilovatios) | 66-85 kW
+- Año de fabricación | 2000-2013
+- Número de artículo del fabricante | R395MK
+- Número(s) de pieza OE | 1307950, 1354394, 3S41-7550F-1A, 3S41-7540F-1A, 1139658`,
+    specs: `Modelos de auto: Ford Focus Mk1; Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Ford Focus dnw; Ford Transit Connect mk1; Ford Mondeo Mk3; Tourneo Connect Furgoneta; Ford Focus Mk1 Berlina; Focus Mk1 Furgoneta / Familiar (DNW)
+Motores: 1.8 TDCi; 2.0 16V DI / TDDi / TDCi
+Potencia (CV): 90-116 CV
+Potencia (kW): 66-85 kW
+Año fabricación: 2000-2013
+N° de artículo LUK: R395MK
+N° OEM: 1307950, 1354394, 3S41-7550F-1A, 3S41-7540F-1A, 1139658`,
+    precio: 708503,
+    ean: `4005108235725`,
+    vcnt: 7,
+  },
+  17: {
+    titulo_ml: `Kit Embrague LUK 623 2197 09 Ford Mondeo 1.8 TD`,
+    descripcion: `KIT DE EMBRAGUE LUK - 623 2197 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Mondeo mk2; Ford Mondeo mk2 Familiar; Ford Mondeo BFP
+- Motores: 1.8 TD
+- Potencia del motor  caballos : 90 CV
+- Potencia  kilovatios : 66 kW
+- A o de fabricaci n: 1996-2000
+- N mero de art culo del fabricante: 623 2197 09
+- N mero s  de pieza OE: 1031127, 97BG-7550A-3B, 97BX-7L596-AA, 97BG-7563A-3A, 97BG-7563A-3B
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Mondeo mk2; Ford Mondeo mk2 Familiar; Ford Mondeo BFP
+- Motores | 1.8 TD
+- Potencia del motor (caballos) | 90 CV
+- Potencia (kilovatios) | 66 kW
+- Año de fabricación | 1996-2000
+- Número de artículo del fabricante | 623 2197 09
+- Número(s) de pieza OE | 1031127, 97BG-7550A-3B, 97BX-7L596-AA, 97BG-7563A-3A, 97BG-7563A-3B
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Mondeo mk2; Ford Mondeo mk2 Familiar; Ford Mondeo BFP
+- Motores | 1.8 TD
+- Potencia del motor (caballos) | 90 CV
+- Potencia (kilovatios) | 66 kW
+- Año de fabricación | 1996-2000
+- Número de artículo del fabricante | 623 2197 09
+- Número(s) de pieza OE | 1031127, 97BG-7550A-3B, 97BX-7L596-AA, 97BG-7563A-3A, 97BG-7563A-3B`,
+    specs: `Modelos de auto: Ford Mondeo mk2; Ford Mondeo mk2 Familiar; Ford Mondeo BFP
+Motores: 1.8 TD
+Potencia (CV): 90 CV
+Potencia (kW): 66 kW
+Año fabricación: 1996-2000
+N° de artículo LUK: 623 2197 09
+N° OEM: 1031127, 97BG-7550A-3B, 97BX-7L596-AA, 97BG-7563A-3A, 97BG-7563A-3B`,
+    precio: 988449,
+    ean: `4005108084934`,
+    vcnt: 7,
+  },
+  18: {
+    titulo_ml: `Kit Embrague LUK 623 3123 09 Ford Mondeo 230mm 2.0 16V`,
+    descripcion: `KIT DE EMBRAGUE LUK - 623 3123 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Focus Mk2; Volvo v50 mw; Ford Focus 2 da; Ford C-Max DM2; Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Volvo S40 Mk2; Volvo C30 533; Ford Mondeo Mk3; Ford Focus Mk2 Berlina; Ford Focus DB3
+- Motores: 2.0; 2.0 FlexFuel; 1.8 FlexFuel; 1.8; 2.0 16V; 1.8 16V
+- Potencia del motor  caballos : 110-146 CV
+- Potencia  kilovatios : 81-107 kW
+- A o de fabricaci n: 2000-2012
+- N mero de art culo del fabricante: R328MK
+- N mero s  de pieza OE: 30759484, 30681125, 1385369, 1147427, 3M51-7540B-1D
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Focus Mk2; Volvo v50 mw; Ford Focus 2 da; Ford C-Max DM2; Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Volvo S40 Mk2; Volvo C30 533; Ford Mondeo Mk3; Ford Focus Mk2 Berlina; Ford Focus DB3
+- Motores | 2.0; 2.0 FlexFuel; 1.8 FlexFuel; 1.8; 2.0 16V; 1.8 16V
+- Potencia del motor (caballos) | 110-146 CV
+- Potencia (kilovatios) | 81-107 kW
+- Año de fabricación | 2000-2012
+- Número de artículo del fabricante | R328MK
+- Número(s) de pieza OE | 30759484, 30681125, 1385369, 1147427, 3M51-7540B-1D
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Focus Mk2; Volvo v50 mw; Ford Focus 2 da; Ford C-Max DM2; Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Volvo S40 Mk2; Volvo C30 533; Ford Mondeo Mk3; Ford Focus Mk2 Berlina; Ford Focus DB3
+- Motores | 2.0; 2.0 FlexFuel; 1.8 FlexFuel; 1.8; 2.0 16V; 1.8 16V
+- Potencia del motor (caballos) | 110-146 CV
+- Potencia (kilovatios) | 81-107 kW
+- Año de fabricación | 2000-2012
+- Número de artículo del fabricante | R328MK
+- Número(s) de pieza OE | 30759484, 30681125, 1385369, 1147427, 3M51-7540B-1D`,
+    specs: `Modelos de auto: Ford Focus Mk2; Volvo v50 mw; Ford Focus 2 da; Ford C-Max DM2; Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Volvo S40 Mk2; Volvo C30 533; Ford Mondeo Mk3; Ford Focus Mk2 Berlina; Ford Focus DB3
+Motores: 2.0; 2.0 FlexFuel; 1.8 FlexFuel; 1.8; 2.0 16V; 1.8 16V
+Potencia (CV): 110-146 CV
+Potencia (kW): 81-107 kW
+Año fabricación: 2000-2012
+N° de artículo LUK: R328MK
+N° OEM: 30759484, 30681125, 1385369, 1147427, 3M51-7540B-1D`,
+    precio: 2545029,
+    ean: `4005108236685`,
+    vcnt: 7,
+  },
+  19: {
+    titulo_ml: `Kit Embrague LUK 624 2222 09 Ford Mondeo 2.5 V6`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 2222 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Mondeo mk2; Ford Mondeo mk2 Familiar; Ford Cougar Coupé; Ford Mondeo BFP; Ford Mondeo MK1 GBP; Ford Mondeo GBP; Ford Mondeo MK1 Familiar
+- Motores: 2.5 24V; 2.5 V6 24V; 2.5 i 24V
+- Potencia del motor  caballos : 170 CV
+- Potencia  kilovatios : 125 kW
+- A o de fabricaci n: 1994-2001
+- N mero de art culo del fabricante: 624 2222 09
+- N mero s  de pieza OE: 1031131, 1031130, 1322087, 97BG 7563 VA, 97BX-7L596-VA
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Mondeo mk2; Ford Mondeo mk2 Familiar; Ford Cougar Coupé; Ford Mondeo BFP; Ford Mondeo MK1 GBP; Ford Mondeo GBP; Ford Mondeo MK1 Familiar
+- Motores | 2.5 24V; 2.5 V6 24V; 2.5 i 24V
+- Potencia del motor (caballos) | 170 CV
+- Potencia (kilovatios) | 125 kW
+- Año de fabricación | 1994-2001
+- Número de artículo del fabricante | 624 2222 09
+- Número(s) de pieza OE | 1031131, 1031130, 1322087, 97BG 7563 VA, 97BX-7L596-VA
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Mondeo mk2; Ford Mondeo mk2 Familiar; Ford Cougar Coupé; Ford Mondeo BFP; Ford Mondeo MK1 GBP; Ford Mondeo GBP; Ford Mondeo MK1 Familiar
+- Motores | 2.5 24V; 2.5 V6 24V; 2.5 i 24V
+- Potencia del motor (caballos) | 170 CV
+- Potencia (kilovatios) | 125 kW
+- Año de fabricación | 1994-2001
+- Número de artículo del fabricante | 624 2222 09
+- Número(s) de pieza OE | 1031131, 1031130, 1322087, 97BG 7563 VA, 97BX-7L596-VA`,
+    specs: `Modelos de auto: Ford Mondeo mk2; Ford Mondeo mk2 Familiar; Ford Cougar Coupé; Ford Mondeo BFP; Ford Mondeo MK1 GBP; Ford Mondeo GBP; Ford Mondeo MK1 Familiar
+Motores: 2.5 24V; 2.5 V6 24V; 2.5 i 24V
+Potencia (CV): 170 CV
+Potencia (kW): 125 kW
+Año fabricación: 1994-2001
+N° de artículo LUK: 624 2222 09
+N° OEM: 1031131, 1031130, 1322087, 97BG 7563 VA, 97BX-7L596-VA`,
+    precio: 1076150,
+    ean: `4005108112071`,
+    vcnt: 7,
+  },
+  20: {
+    titulo_ml: `Kit Embrague LUK 624 2048 09 Ford Mondeo`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 2048 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Mondeo MK1 GBP; Ford Mondeo GBP; Ford Mondeo MK1 Familiar
+- Motores: 1.8 TD
+- Potencia del motor  caballos : 88-90 CV
+- Potencia  kilovatios : 65-66 kW
+- A o de fabricaci n: 1993-1996
+- N mero de art culo del fabricante: 624 2048 09
+- N mero s  de pieza OE: 5030184, 93BG-7550H-1B, 1057583, 7313832, 7321389
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Mondeo MK1 GBP; Ford Mondeo GBP; Ford Mondeo MK1 Familiar
+- Motores | 1.8 TD
+- Potencia del motor (caballos) | 88-90 CV
+- Potencia (kilovatios) | 65-66 kW
+- Año de fabricación | 1993-1996
+- Número de artículo del fabricante | 624 2048 09
+- Número(s) de pieza OE | 5030184, 93BG-7550H-1B, 1057583, 7313832, 7321389
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Mondeo MK1 GBP; Ford Mondeo GBP; Ford Mondeo MK1 Familiar
+- Motores | 1.8 TD
+- Potencia del motor (caballos) | 88-90 CV
+- Potencia (kilovatios) | 65-66 kW
+- Año de fabricación | 1993-1996
+- Número de artículo del fabricante | 624 2048 09
+- Número(s) de pieza OE | 5030184, 93BG-7550H-1B, 1057583, 7313832, 7321389`,
+    specs: `Modelos de auto: Ford Mondeo MK1 GBP; Ford Mondeo GBP; Ford Mondeo MK1 Familiar
+Motores: 1.8 TD
+Potencia (CV): 88-90 CV
+Potencia (kW): 65-66 kW
+Año fabricación: 1993-1996
+N° de artículo LUK: 624 2048 09
+N° OEM: 5030184, 93BG-7550H-1B, 1057583, 7313832, 7321389`,
+    precio: 1076150,
+    ean: `4005108756633`,
+    vcnt: 7,
+  },
+  21: {
+    titulo_ml: `Kit Embrague LUK 624 3378 09 Ford Mondeo 240mm 1.8 TDCI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 3378 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Número de pieza: 624 3378 09
+- Marca: LUK
+
+VEHICULO COMPATIBLE:
+- Kit Embrague LUK 624 3378 09 Ford Mondeo 240mm 1.8 TDCI
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: ``,
+    specs: ``,
+    precio: 2545029,
+    ean: ``,
+    vcnt: 0,
+  },
+  22: {
+    titulo_ml: `Kit Embrague LUK 624 3034 09 Golf 240mm 1.8T`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 3034 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 4; Polo 9N; Seat Ibiza 6L; Audi A3 8L; Seat Ibiza 6J; Seat Leon Mk1; VW Golf 4 Variant; Skoda Fabia 6y2; Audi TT 8N; Seat Ibiza IV Sportcoupe; VW Sharan 1; Skoda Octavia 1u; VW Bora 1j2; Skoda Octavia 1u5; VW Beetle 9c; Seat Alhambra 7V9; Seat Toledo 2; Audi TT 8N Roadster; Ford Galaxy wgr; Seat Cordoba Mk2
+- Motores: 1.8 T GTI; 1.9 TDI 4motion; 1.9 TDI; 2.3 V5 4motion; 2.8 VR6 4motion; 1.9 TDI Cupra R; S3 quattro; 1.9 TDI quattro; 1.8 T; 1.8 T quattro; 2.0 TDI; 1.9 TDI Syncro; 1.8 T Cupra R; 2.8 Cupra 4; 1.8 20V T 4; 1.8 20V T; 2.8 V6 4motion; 1.9 TDI RS; 1.8 T 20V; 1.9 TDI 4x4; 3.2 RSI 4motion; 1.8 20VT
+- Potencia del motor  caballos : 90-225 CV
+- Potencia  kilovatios : 66-165 kW
+- A o de fabricaci n: 1995-2015
+- N mero de art culo del fabricante: R309MK
+- N mero s  de pieza OE: 06A 141 031 K, 06A141031Q, 06A 141 025 K, 06A 198 141 X, 038 141 032 R
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 4; Polo 9N; Seat Ibiza 6L; Audi A3 8L; Seat Ibiza 6J; Seat Leon Mk1; VW Golf 4 Variant; Skoda Fabia 6y2; Audi TT 8N; Seat Ibiza IV Sportcoupe; VW Sharan 1; Skoda Octavia 1u; VW Bora 1j2; Skoda Octavia 1u5; VW Beetle 9c; Seat Alhambra 7V9; Seat Toledo 2; Audi TT 8N Roadster; Ford Galaxy wgr; Seat Cordoba Mk2
+- Motores | 1.8 T GTI; 1.9 TDI 4motion; 1.9 TDI; 2.3 V5 4motion; 2.8 VR6 4motion; 1.9 TDI Cupra R; S3 quattro; 1.9 TDI quattro; 1.8 T; 1.8 T quattro; 2.0 TDI; 1.9 TDI Syncro; 1.8 T Cupra R; 2.8 Cupra 4; 1.8 20V T 4; 1.8 20V T; 2.8 V6 4motion; 1.9 TDI RS; 1.8 T 20V; 1.9 TDI 4x4; 3.2 RSI 4motion; 1.8 20VT
+- Potencia del motor (caballos) | 90-225 CV
+- Potencia (kilovatios) | 66-165 kW
+- Año de fabricación | 1995-2015
+- Número de artículo del fabricante | R309MK
+- Número(s) de pieza OE | 06A 141 031 K, 06A141031Q, 06A 141 025 K, 06A 198 141 X, 038 141 032 R
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 4; Polo 9N; Seat Ibiza 6L; Audi A3 8L; Seat Ibiza 6J; Seat Leon Mk1; VW Golf 4 Variant; Skoda Fabia 6y2; Audi TT 8N; Seat Ibiza IV Sportcoupe; VW Sharan 1; Skoda Octavia 1u; VW Bora 1j2; Skoda Octavia 1u5; VW Beetle 9c; Seat Alhambra 7V9; Seat Toledo 2; Audi TT 8N Roadster; Ford Galaxy wgr; Seat Cordoba Mk2
+- Motores | 1.8 T GTI; 1.9 TDI 4motion; 1.9 TDI; 2.3 V5 4motion; 2.8 VR6 4motion; 1.9 TDI Cupra R; S3 quattro; 1.9 TDI quattro; 1.8 T; 1.8 T quattro; 2.0 TDI; 1.9 TDI Syncro; 1.8 T Cupra R; 2.8 Cupra 4; 1.8 20V T 4; 1.8 20V T; 2.8 V6 4motion; 1.9 TDI RS; 1.8 T 20V; 1.9 TDI 4x4; 3.2 RSI 4motion; 1.8 20VT
+- Potencia del motor (caballos) | 90-225 CV
+- Potencia (kilovatios) | 66-165 kW
+- Año de fabricación | 1995-2015
+- Número de artículo del fabricante | R309MK
+- Número(s) de pieza OE | 06A 141 031 K, 06A141031Q, 06A 141 025 K, 06A 198 141 X, 038 141 032 R`,
+    specs: `Modelos de auto: Golf 4; Polo 9N; Seat Ibiza 6L; Audi A3 8L; Seat Ibiza 6J; Seat Leon Mk1; VW Golf 4 Variant; Skoda Fabia 6y2; Audi TT 8N; Seat Ibiza IV Sportcoupe; VW Sharan 1; Skoda Octavia 1u; VW Bora 1j2; Skoda Octavia 1u5; VW Beetle 9c; Seat Alhambra 7V9; Seat Toledo 2; Audi TT 8N Roadster; Ford Galaxy wgr; Seat Cordoba Mk2
+Motores: 1.8 T GTI; 1.9 TDI 4motion; 1.9 TDI; 2.3 V5 4motion; 2.8 VR6 4motion; 1.9 TDI Cupra R; S3 quattro; 1.9 TDI quattro; 1.8 T; 1.8 T quattro; 2.0 TDI; 1.9 TDI Syncro; 1.8 T Cupra R; 2.8 Cupra 4; 1.8 20V T 4; 1.8 20V T; 2.8 V6 4motion; 1.9 TDI RS; 1.8 T 20V; 1.9 TDI 4x4; 3.2 RSI 4motion; 1.8 20VT
+Potencia (CV): 90-225 CV
+Potencia (kW): 66-165 kW
+Año fabricación: 1995-2015
+N° de artículo LUK: R309MK
+N° OEM: 06A 141 031 K, 06A141031Q, 06A 141 025 K, 06A 198 141 X, 038 141 032 R`,
+    precio: 1452544,
+    ean: `4005108265128`,
+    vcnt: 7,
+  },
+  23: {
+    titulo_ml: `Kit Embrague LUK 621 1332 09 Golf 210mm`,
+    descripcion: `KIT DE EMBRAGUE LUK - 621 1332 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf Mk3; Seat Ibiza 6K; Seat Cordoba 6K2; Golf 3 Familiar; Seat Toledo 1L; VW Vento 1h2
+- Motores: 1.9 SDI; 1.9 TD; GTD; 1.9 D; 1.9 TD
+- Potencia del motor  caballos : 64-75 CV
+- Potencia  kilovatios : 47-55 kW
+- A o de fabricaci n: 1991-1999
+- N mero de art culo del fabricante: 621 1332 09
+- N mero s  de pieza OE: 036 141 025 K, 06A 141 025 Q, 027 141 025 T, 032 141 025 M, 027 141 026 C
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf Mk3; Seat Ibiza 6K; Seat Cordoba 6K2; Golf 3 Familiar; Seat Toledo 1L; VW Vento 1h2
+- Motores | 1.9 SDI; 1.9 TD; GTD; 1.9 D; 1.9 TD
+- Potencia del motor (caballos) | 64-75 CV
+- Potencia (kilovatios) | 47-55 kW
+- Año de fabricación | 1991-1999
+- Número de artículo del fabricante | 621 1332 09
+- Número(s) de pieza OE | 036 141 025 K, 06A 141 025 Q, 027 141 025 T, 032 141 025 M, 027 141 026 C
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf Mk3; Seat Ibiza 6K; Seat Cordoba 6K2; Golf 3 Familiar; Seat Toledo 1L; VW Vento 1h2
+- Motores | 1.9 SDI; 1.9 TD; GTD; 1.9 D; 1.9 TD
+- Potencia del motor (caballos) | 64-75 CV
+- Potencia (kilovatios) | 47-55 kW
+- Año de fabricación | 1991-1999
+- Número de artículo del fabricante | 621 1332 09
+- Número(s) de pieza OE | 036 141 025 K, 06A 141 025 Q, 027 141 025 T, 032 141 025 M, 027 141 026 C`,
+    specs: `Modelos de auto: Golf Mk3; Seat Ibiza 6K; Seat Cordoba 6K2; Golf 3 Familiar; Seat Toledo 1L; VW Vento 1h2
+Motores: 1.9 SDI; 1.9 TD; GTD; 1.9 D; 1.9 TD
+Potencia (CV): 64-75 CV
+Potencia (kW): 47-55 kW
+Año fabricación: 1991-1999
+N° de artículo LUK: 621 1332 09
+N° OEM: 036 141 025 K, 06A 141 025 Q, 027 141 025 T, 032 141 025 M, 027 141 026 C`,
+    precio: 1138622,
+    ean: `4005108190499`,
+    vcnt: 7,
+  },
+  24: {
+    titulo_ml: `Kit Embrague LUK 624 3126 09 Sharan 240mm 1.8 20V`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 3126 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: VW Sharan 1; Seat Alhambra 7V9
+- Motores: 2.0 LPG; 1.8 T 20V; 2.0; 2.0 i
+- Potencia del motor  caballos : 115-150 CV
+- Potencia  kilovatios : 85-110 kW
+- A o de fabricaci n: 1995-2010
+- N mero de art culo del fabricante: 624 3126 09
+- N mero s  de pieza OE: 06A 141 031 K, 06A 141 025 N, 038 141 032 J, 06A 141 031 Q, 038 141 032 R
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | VW Sharan 1; Seat Alhambra 7V9
+- Motores | 2.0 LPG; 1.8 T 20V; 2.0; 2.0 i
+- Potencia del motor (caballos) | 115-150 CV
+- Potencia (kilovatios) | 85-110 kW
+- Año de fabricación | 1995-2010
+- Número de artículo del fabricante | 624 3126 09
+- Número(s) de pieza OE | 06A 141 031 K, 06A 141 025 N, 038 141 032 J, 06A 141 031 Q, 038 141 032 R
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | VW Sharan 1; Seat Alhambra 7V9
+- Motores | 2.0 LPG; 1.8 T 20V; 2.0; 2.0 i
+- Potencia del motor (caballos) | 115-150 CV
+- Potencia (kilovatios) | 85-110 kW
+- Año de fabricación | 1995-2010
+- Número de artículo del fabricante | 624 3126 09
+- Número(s) de pieza OE | 06A 141 031 K, 06A 141 025 N, 038 141 032 J, 06A 141 031 Q, 038 141 032 R`,
+    specs: `Modelos de auto: VW Sharan 1; Seat Alhambra 7V9
+Motores: 2.0 LPG; 1.8 T 20V; 2.0; 2.0 i
+Potencia (CV): 115-150 CV
+Potencia (kW): 85-110 kW
+Año fabricación: 1995-2010
+N° de artículo LUK: 624 3126 09
+N° OEM: 06A 141 031 K, 06A 141 025 N, 038 141 032 J, 06A 141 031 Q, 038 141 032 R`,
+    precio: 806622,
+    ean: `4005108261953`,
+    vcnt: 7,
+  },
+  25: {
+    titulo_ml: `Kit Embrague LUK 624 3230 09 Vento 240mm 2.0 TDI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 3230 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Golf 5 Plus; VW Caddy 3 Furgón; Passat B6; VW Caddy 3; Scirocco 3; Skoda Octavia 2; Audi TT 8J; Skoda Superb 3t5; Skoda Yeti 5l; VW Passat CC; VW Golf 1k5; Seat Altea 5p1
+- Motores: 2.0 TDI 4motion; 2.0 TDI; 2.0 GTI; 2.0 TDI 16V 4motion; 1.9 TDI 4motion; 2.0 TDI 16V; 2.0 GTi; 1.8 TFSI quattro; 2.0 TDI quattro; 2.0 TDI 16V quattro; 2.0 TFSI quattro; 2.0 TFSI; 1.9 TDI; 2.0 BlueTDI; 1.8 TSI; 1.8 TSI 4x4; 2.0 TDI RS; 2.0 TDI 4x4; 1.9 TDI 4x4; 1.6 TDI 4x4; 2.0 TSI; 1.8 TFSI; 2.0 TFSI 4x4
+- Potencia del motor  caballos : 90-211 CV
+- Potencia  kilovatios : 66-155 kW
+- A o de fabricaci n: 2003-2017
+- N mero de art culo del fabricante: 624 3230 09
+- N mero s  de pieza OE: 03G 141 015 L, 03L 141 031 P, 03G 141 025 H, 03G 141 015 LX, 06J 141 015 A
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Golf 5 Plus; VW Caddy 3 Furgón; Passat B6; VW Caddy 3; Scirocco 3; Skoda Octavia 2; Audi TT 8J; Skoda Superb 3t5; Skoda Yeti 5l; VW Passat CC; VW Golf 1k5; Seat Altea 5p1
+- Motores | 2.0 TDI 4motion; 2.0 TDI; 2.0 GTI; 2.0 TDI 16V 4motion; 1.9 TDI 4motion; 2.0 TDI 16V; 2.0 GTi; 1.8 TFSI quattro; 2.0 TDI quattro; 2.0 TDI 16V quattro; 2.0 TFSI quattro; 2.0 TFSI; 1.9 TDI; 2.0 BlueTDI; 1.8 TSI; 1.8 TSI 4x4; 2.0 TDI RS; 2.0 TDI 4x4; 1.9 TDI 4x4; 1.6 TDI 4x4; 2.0 TSI; 1.8 TFSI; 2.0 TFSI 4x4
+- Potencia del motor (caballos) | 90-211 CV
+- Potencia (kilovatios) | 66-155 kW
+- Año de fabricación | 2003-2017
+- Número de artículo del fabricante | 624 3230 09
+- Número(s) de pieza OE | 03G 141 015 L, 03L 141 031 P, 03G 141 025 H, 03G 141 015 LX, 06J 141 015 A
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Golf 5 Plus; VW Caddy 3 Furgón; Passat B6; VW Caddy 3; Scirocco 3; Skoda Octavia 2; Audi TT 8J; Skoda Superb 3t5; Skoda Yeti 5l; VW Passat CC; VW Golf 1k5; Seat Altea 5p1
+- Motores | 2.0 TDI 4motion; 2.0 TDI; 2.0 GTI; 2.0 TDI 16V 4motion; 1.9 TDI 4motion; 2.0 TDI 16V; 2.0 GTi; 1.8 TFSI quattro; 2.0 TDI quattro; 2.0 TDI 16V quattro; 2.0 TFSI quattro; 2.0 TFSI; 1.9 TDI; 2.0 BlueTDI; 1.8 TSI; 1.8 TSI 4x4; 2.0 TDI RS; 2.0 TDI 4x4; 1.9 TDI 4x4; 1.6 TDI 4x4; 2.0 TSI; 1.8 TFSI; 2.0 TFSI 4x4
+- Potencia del motor (caballos) | 90-211 CV
+- Potencia (kilovatios) | 66-155 kW
+- Año de fabricación | 2003-2017
+- Número de artículo del fabricante | 624 3230 09
+- Número(s) de pieza OE | 03G 141 015 L, 03L 141 031 P, 03G 141 025 H, 03G 141 015 LX, 06J 141 015 A`,
+    specs: `Modelos de auto: Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Golf 5 Plus; VW Caddy 3 Furgón; Passat B6; VW Caddy 3; Scirocco 3; Skoda Octavia 2; Audi TT 8J; Skoda Superb 3t5; Skoda Yeti 5l; VW Passat CC; VW Golf 1k5; Seat Altea 5p1
+Motores: 2.0 TDI 4motion; 2.0 TDI; 2.0 GTI; 2.0 TDI 16V 4motion; 1.9 TDI 4motion; 2.0 TDI 16V; 2.0 GTi; 1.8 TFSI quattro; 2.0 TDI quattro; 2.0 TDI 16V quattro; 2.0 TFSI quattro; 2.0 TFSI; 1.9 TDI; 2.0 BlueTDI; 1.8 TSI; 1.8 TSI 4x4; 2.0 TDI RS; 2.0 TDI 4x4; 1.9 TDI 4x4; 1.6 TDI 4x4; 2.0 TSI; 1.8 TFSI; 2.0 TFSI 4x4
+Potencia (CV): 90-211 CV
+Potencia (kW): 66-155 kW
+Año fabricación: 2003-2017
+N° de artículo LUK: 624 3230 09
+N° OEM: 03G 141 015 L, 03L 141 031 P, 03G 141 025 H, 03G 141 015 LX, 06J 141 015 A`,
+    precio: 1807704,
+    ean: `4005108505415`,
+    vcnt: 7,
+  },
+  26: {
+    titulo_ml: `Kit Embrague LUK 624 3279 09 Vento 240mm 2.0 TFSI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 3279 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 5; Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat B6; Scirocco 3; Skoda Octavia 2; Audi TT 8J; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; VW Jetta 1k2; Audi TT Roadster; Seat Toledo 3
+- Motores: 2.0 GTI; 2.0 R 4motion; 2.0 GTi; S3 quattro; 2.0 TFSI quattro; 2.0 TFSI; 2.0 Cupra R; 2.0 R; 2.0 TTS quattro; 2.0 TFSI 4x4
+- Potencia del motor  caballos : 185-272 CV
+- Potencia  kilovatios : 136-200 kW
+- A o de fabricaci n: 2004-2017
+- N mero de art culo del fabricante: R435MK
+- N mero s  de pieza OE: 06F 141 015 C, 022 141 015 R, 022 141 031 R
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 5; Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat B6; Scirocco 3; Skoda Octavia 2; Audi TT 8J; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; VW Jetta 1k2; Audi TT Roadster; Seat Toledo 3
+- Motores | 2.0 GTI; 2.0 R 4motion; 2.0 GTi; S3 quattro; 2.0 TFSI quattro; 2.0 TFSI; 2.0 Cupra R; 2.0 R; 2.0 TTS quattro; 2.0 TFSI 4x4
+- Potencia del motor (caballos) | 185-272 CV
+- Potencia (kilovatios) | 136-200 kW
+- Año de fabricación | 2004-2017
+- Número de artículo del fabricante | R435MK
+- Número(s) de pieza OE | 06F 141 015 C, 022 141 015 R, 022 141 031 R
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 5; Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat B6; Scirocco 3; Skoda Octavia 2; Audi TT 8J; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; VW Jetta 1k2; Audi TT Roadster; Seat Toledo 3
+- Motores | 2.0 GTI; 2.0 R 4motion; 2.0 GTi; S3 quattro; 2.0 TFSI quattro; 2.0 TFSI; 2.0 Cupra R; 2.0 R; 2.0 TTS quattro; 2.0 TFSI 4x4
+- Potencia del motor (caballos) | 185-272 CV
+- Potencia (kilovatios) | 136-200 kW
+- Año de fabricación | 2004-2017
+- Número de artículo del fabricante | R435MK
+- Número(s) de pieza OE | 06F 141 015 C, 022 141 015 R, 022 141 031 R`,
+    specs: `Modelos de auto: Golf 5; Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat B6; Scirocco 3; Skoda Octavia 2; Audi TT 8J; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; VW Jetta 1k2; Audi TT Roadster; Seat Toledo 3
+Motores: 2.0 GTI; 2.0 R 4motion; 2.0 GTi; S3 quattro; 2.0 TFSI quattro; 2.0 TFSI; 2.0 Cupra R; 2.0 R; 2.0 TTS quattro; 2.0 TFSI 4x4
+Potencia (CV): 185-272 CV
+Potencia (kW): 136-200 kW
+Año fabricación: 2004-2017
+N° de artículo LUK: R435MK
+N° OEM: 06F 141 015 C, 022 141 015 R, 022 141 031 R`,
+    precio: 1395299,
+    ean: `4005108545770`,
+    vcnt: 7,
+  },
+  27: {
+    titulo_ml: `Kit Embrague LUK 624 3474 09 Vento 240mm 2.0 TDI`,
+    descripcion: `KIT DE EMBRAGUE LUK - 624 3474 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: VW Amarok 2H; VW Amarok Camión de plataforma
+- Motores: 2.0 TDI 4motion; 2.0 TDI; 2.0 BiTDI; 2.0 BiTDI 4motion; 2.0 TSI
+- Potencia del motor  caballos : 122-180 CV
+- Potencia  kilovatios : 90-132 kW
+- A o de fabricaci n: 2010-2022
+- N mero de art culo del fabricante: 624 3474 09
+- N mero s  de pieza OE: 03L 141 016 M, 03L 141 015 F, 03L 141 031 D, 03L 141 025 C
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | VW Amarok 2H; VW Amarok Camión de plataforma
+- Motores | 2.0 TDI 4motion; 2.0 TDI; 2.0 BiTDI; 2.0 BiTDI 4motion; 2.0 TSI
+- Potencia del motor (caballos) | 122-180 CV
+- Potencia (kilovatios) | 90-132 kW
+- Año de fabricación | 2010-2022
+- Número de artículo del fabricante | 624 3474 09
+- Número(s) de pieza OE | 03L 141 016 M, 03L 141 015 F, 03L 141 031 D, 03L 141 025 C
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | VW Amarok 2H; VW Amarok Camión de plataforma
+- Motores | 2.0 TDI 4motion; 2.0 TDI; 2.0 BiTDI; 2.0 BiTDI 4motion; 2.0 TSI
+- Potencia del motor (caballos) | 122-180 CV
+- Potencia (kilovatios) | 90-132 kW
+- Año de fabricación | 2010-2022
+- Número de artículo del fabricante | 624 3474 09
+- Número(s) de pieza OE | 03L 141 016 M, 03L 141 015 F, 03L 141 031 D, 03L 141 025 C`,
+    specs: `Modelos de auto: VW Amarok 2H; VW Amarok Camión de plataforma
+Motores: 2.0 TDI 4motion; 2.0 TDI; 2.0 BiTDI; 2.0 BiTDI 4motion; 2.0 TSI
+Potencia (CV): 122-180 CV
+Potencia (kW): 90-132 kW
+Año fabricación: 2010-2022
+N° de artículo LUK: 624 3474 09
+N° OEM: 03L 141 016 M, 03L 141 015 F, 03L 141 031 D, 03L 141 025 C`,
+    precio: 1678657,
+    ean: `4005108804372`,
+    vcnt: 7,
+  },
+  28: {
+    titulo_ml: `Volante LUK 415 0348 10 Audi 3.2  (AUK-BKH)`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0348 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A4 B7 Avant; Audi A4 B7; Audi A4 8h
+- Motores: 3.2 FSI quattro
+- Potencia del motor  caballos : 255 CV
+- Potencia  kilovatios : 188 kW
+- A o de fabricaci n: 2005-2009
+- N mero de art culo del fabricante: 415 0348 10
+- N mero s  de pieza OE: 06E 105 266 AA
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A4 B7 Avant; Audi A4 B7; Audi A4 8h
+- Motores | 3.2 FSI quattro
+- Potencia del motor (caballos) | 255 CV
+- Potencia (kilovatios) | 188 kW
+- Año de fabricación | 2005-2009
+- Número de artículo del fabricante | 415 0348 10
+- Número(s) de pieza OE | 06E 105 266 AA
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A4 B7 Avant; Audi A4 B7; Audi A4 8h
+- Motores | 3.2 FSI quattro
+- Potencia del motor (caballos) | 255 CV
+- Potencia (kilovatios) | 188 kW
+- Año de fabricación | 2005-2009
+- Número de artículo del fabricante | 415 0348 10
+- Número(s) de pieza OE | 06E 105 266 AA`,
+    specs: `Modelos de auto: Audi A4 B7 Avant; Audi A4 B7; Audi A4 8h
+Motores: 3.2 FSI quattro
+Potencia (CV): 255 CV
+Potencia (kW): 188 kW
+Año fabricación: 2005-2009
+N° de artículo LUK: 415 0348 10
+N° OEM: 06E 105 266 AA`,
+    precio: null,
+    ean: `4005108525840`,
+    vcnt: 7,
+  },
+  29: {
+    titulo_ml: `Volante LUK 415 0497 09 Audi A3 1.4 TFSI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0497 09
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 5; Polo 6R; Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Seat Ibiza 6J; Golf 5 Plus; Passat B6; Fabia 2 (542); Skoda Octavia 2; Golf AJ5; Fabia 2 (545); Seat Ibiza IV Sportcoupe; Skoda Yeti 5l; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL
+- Motores: 1.4 TSI; 1.2 TSI; 1.4; 1.6; 1.4 TFSI
+- Potencia del motor  caballos : 85-125 CV
+- Potencia  kilovatios : 63-92 kW
+- A o de fabricaci n: 2003-2022
+- N mero de art culo del fabricante: 415 0497 09
+- N mero s  de pieza OE: 036 105 266 D, 036 105 266 C
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 5; Polo 6R; Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Seat Ibiza 6J; Golf 5 Plus; Passat B6; Fabia 2 (542); Skoda Octavia 2; Golf AJ5; Fabia 2 (545); Seat Ibiza IV Sportcoupe; Skoda Yeti 5l; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL
+- Motores | 1.4 TSI; 1.2 TSI; 1.4; 1.6; 1.4 TFSI
+- Potencia del motor (caballos) | 85-125 CV
+- Potencia (kilovatios) | 63-92 kW
+- Año de fabricación | 2003-2022
+- Número de artículo del fabricante | 415 0497 09
+- Número(s) de pieza OE | 036 105 266 D, 036 105 266 C
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 5; Polo 6R; Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Seat Ibiza 6J; Golf 5 Plus; Passat B6; Fabia 2 (542); Skoda Octavia 2; Golf AJ5; Fabia 2 (545); Seat Ibiza IV Sportcoupe; Skoda Yeti 5l; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL
+- Motores | 1.4 TSI; 1.2 TSI; 1.4; 1.6; 1.4 TFSI
+- Potencia del motor (caballos) | 85-125 CV
+- Potencia (kilovatios) | 63-92 kW
+- Año de fabricación | 2003-2022
+- Número de artículo del fabricante | 415 0497 09
+- Número(s) de pieza OE | 036 105 266 D, 036 105 266 C`,
+    specs: `Modelos de auto: Golf 5; Polo 6R; Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Seat Ibiza 6J; Golf 5 Plus; Passat B6; Fabia 2 (542); Skoda Octavia 2; Golf AJ5; Fabia 2 (545); Seat Ibiza IV Sportcoupe; Skoda Yeti 5l; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL
+Motores: 1.4 TSI; 1.2 TSI; 1.4; 1.6; 1.4 TFSI
+Potencia (CV): 85-125 CV
+Potencia (kW): 63-92 kW
+Año fabricación: 2003-2022
+N° de artículo LUK: 415 0497 09
+N° OEM: 036 105 266 D, 036 105 266 C`,
+    precio: null,
+    ean: `4005108613240`,
+    vcnt: 7,
+  },
+  30: {
+    titulo_ml: `Volante LUK 415 0500 09 Audi A3 1.4 TFSI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0500 09
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Número de pieza: 415 0500 09
+- Marca: LUK
+
+VEHICULO COMPATIBLE:
+- Volante Bimasa Audi A3 1.4 TFSI
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: ``,
+    specs: ``,
+    precio: null,
+    ean: `03F105266`,
+    vcnt: 0,
+  },
+  31: {
+    titulo_ml: `Volante LUK 415 0330 10 Audi A3 2.0 TFSI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0330 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 5; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat B6; Skoda Octavia 2; Audi TT 8J; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; VW Jetta 1k2; Audi TT Roadster; Seat Toledo 3
+- Motores: 2.0 GTI; 2.0 TFSI quattro; 2.0 TFSI
+- Potencia del motor  caballos : 185-200 CV
+- Potencia  kilovatios : 136-147 kW
+- A o de fabricaci n: 2004-2015
+- N mero de art culo del fabricante: 415 0330 10
+- N mero s  de pieza OE: 06F 105 266 K, 06F 105 266 F
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 5; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat B6; Skoda Octavia 2; Audi TT 8J; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; VW Jetta 1k2; Audi TT Roadster; Seat Toledo 3
+- Motores | 2.0 GTI; 2.0 TFSI quattro; 2.0 TFSI
+- Potencia del motor (caballos) | 185-200 CV
+- Potencia (kilovatios) | 136-147 kW
+- Año de fabricación | 2004-2015
+- Número de artículo del fabricante | 415 0330 10
+- Número(s) de pieza OE | 06F 105 266 K, 06F 105 266 F
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 5; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat B6; Skoda Octavia 2; Audi TT 8J; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; VW Jetta 1k2; Audi TT Roadster; Seat Toledo 3
+- Motores | 2.0 GTI; 2.0 TFSI quattro; 2.0 TFSI
+- Potencia del motor (caballos) | 185-200 CV
+- Potencia (kilovatios) | 136-147 kW
+- Año de fabricación | 2004-2015
+- Número de artículo del fabricante | 415 0330 10
+- Número(s) de pieza OE | 06F 105 266 K, 06F 105 266 F`,
+    specs: `Modelos de auto: Golf 5; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat B6; Skoda Octavia 2; Audi TT 8J; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; VW Jetta 1k2; Audi TT Roadster; Seat Toledo 3
+Motores: 2.0 GTI; 2.0 TFSI quattro; 2.0 TFSI
+Potencia (CV): 185-200 CV
+Potencia (kW): 136-147 kW
+Año fabricación: 2004-2015
+N° de artículo LUK: 415 0330 10
+N° OEM: 06F 105 266 K, 06F 105 266 F`,
+    precio: null,
+    ean: `4005108524812`,
+    vcnt: 7,
+  },
+  32: {
+    titulo_ml: `Volante LUK 415 0149 10 Audi A4 3.0 V6`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0149 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A4 B6 Avant; Audi A4 B6; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5
+- Motores: 3.0 quattro; 3.0
+- Potencia del motor  caballos : 218-220 CV
+- Potencia  kilovatios : 160-162 kW
+- A o de fabricaci n: 2000-2005
+- N mero de art culo del fabricante: 415 0149 10
+- N mero s  de pieza OE: 06C 105 266 B
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A4 B6 Avant; Audi A4 B6; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5
+- Motores | 3.0 quattro; 3.0
+- Potencia del motor (caballos) | 218-220 CV
+- Potencia (kilovatios) | 160-162 kW
+- Año de fabricación | 2000-2005
+- Número de artículo del fabricante | 415 0149 10
+- Número(s) de pieza OE | 06C 105 266 B
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A4 B6 Avant; Audi A4 B6; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5
+- Motores | 3.0 quattro; 3.0
+- Potencia del motor (caballos) | 218-220 CV
+- Potencia (kilovatios) | 160-162 kW
+- Año de fabricación | 2000-2005
+- Número de artículo del fabricante | 415 0149 10
+- Número(s) de pieza OE | 06C 105 266 B`,
+    specs: `Modelos de auto: Audi A4 B6 Avant; Audi A4 B6; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5
+Motores: 3.0 quattro; 3.0
+Potencia (CV): 218-220 CV
+Potencia (kW): 160-162 kW
+Año fabricación: 2000-2005
+N° de artículo LUK: 415 0149 10
+N° OEM: 06C 105 266 B`,
+    precio: null,
+    ean: `4005108214829`,
+    vcnt: 7,
+  },
+  33: {
+    titulo_ml: `Volante LUK 415 0350 10 Audi A4 BEX`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0350 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A4 B6 Avant; Audi A4 B6
+- Motores: 1.8 T quattro; 1.8 T
+- Potencia del motor  caballos : 190 CV
+- Potencia  kilovatios : 140 kW
+- A o de fabricaci n: 2002-2004
+- N mero de art culo del fabricante: 415 0350 10
+- N mero s  de pieza OE: 06B 105 266 B
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A4 B6 Avant; Audi A4 B6
+- Motores | 1.8 T quattro; 1.8 T
+- Potencia del motor (caballos) | 190 CV
+- Potencia (kilovatios) | 140 kW
+- Año de fabricación | 2002-2004
+- Número de artículo del fabricante | 415 0350 10
+- Número(s) de pieza OE | 06B 105 266 B
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A4 B6 Avant; Audi A4 B6
+- Motores | 1.8 T quattro; 1.8 T
+- Potencia del motor (caballos) | 190 CV
+- Potencia (kilovatios) | 140 kW
+- Año de fabricación | 2002-2004
+- Número de artículo del fabricante | 415 0350 10
+- Número(s) de pieza OE | 06B 105 266 B`,
+    specs: `Modelos de auto: Audi A4 B6 Avant; Audi A4 B6
+Motores: 1.8 T quattro; 1.8 T
+Potencia (CV): 190 CV
+Potencia (kW): 140 kW
+Año fabricación: 2002-2004
+N° de artículo LUK: 415 0350 10
+N° OEM: 06B 105 266 B`,
+    precio: null,
+    ean: `4005108526359`,
+    vcnt: 7,
+  },
+  34: {
+    titulo_ml: `Volante LUK 415 0127 10 Audi A4 BFB`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0127 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A4 B7 Avant; Audi A4 B6 Avant; Audi A4 B6; Audi A4 B7; Audi A4 8h; Seat Exeo st; Seat Exeo Berlina
+- Motores: 1.8 T quattro; 1.8 T
+- Potencia del motor  caballos : 150-170 CV
+- Potencia  kilovatios : 110-125 kW
+- A o de fabricaci n: 2001-2010
+- N mero de art culo del fabricante: 415 0127 10
+- N mero s  de pieza OE: 06B 105 266 A, 058 105 266 A
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A4 B7 Avant; Audi A4 B6 Avant; Audi A4 B6; Audi A4 B7; Audi A4 8h; Seat Exeo st; Seat Exeo Berlina
+- Motores | 1.8 T quattro; 1.8 T
+- Potencia del motor (caballos) | 150-170 CV
+- Potencia (kilovatios) | 110-125 kW
+- Año de fabricación | 2001-2010
+- Número de artículo del fabricante | 415 0127 10
+- Número(s) de pieza OE | 06B 105 266 A, 058 105 266 A
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A4 B7 Avant; Audi A4 B6 Avant; Audi A4 B6; Audi A4 B7; Audi A4 8h; Seat Exeo st; Seat Exeo Berlina
+- Motores | 1.8 T quattro; 1.8 T
+- Potencia del motor (caballos) | 150-170 CV
+- Potencia (kilovatios) | 110-125 kW
+- Año de fabricación | 2001-2010
+- Número de artículo del fabricante | 415 0127 10
+- Número(s) de pieza OE | 06B 105 266 A, 058 105 266 A`,
+    specs: `Modelos de auto: Audi A4 B7 Avant; Audi A4 B6 Avant; Audi A4 B6; Audi A4 B7; Audi A4 8h; Seat Exeo st; Seat Exeo Berlina
+Motores: 1.8 T quattro; 1.8 T
+Potencia (CV): 150-170 CV
+Potencia (kW): 110-125 kW
+Año fabricación: 2001-2010
+N° de artículo LUK: 415 0127 10
+N° OEM: 06B 105 266 A, 058 105 266 A`,
+    precio: null,
+    ean: `4005108223104`,
+    vcnt: 7,
+  },
+  35: {
+    titulo_ml: `Volante LUK 415 0145 10 Audi A4/A5 2.5 TDI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0145 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A4 B7 Avant; Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A4 B7; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5; Audi A8 D2; Skoda Superb 3u; Audi Allroad 4BH
+- Motores: 2.5 TDI; 2.5 TDI quattro; 2.5 TDI 4motion
+- Potencia del motor  caballos : 150-180 CV
+- Potencia  kilovatios : 110-132 kW
+- A o de fabricaci n: 2000-2008
+- N mero de art culo del fabricante: 415 0145 10
+- N mero s  de pieza OE: 059 105 266 T, 059 105 266 H, 059 105 266 E
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A4 B7 Avant; Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A4 B7; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5; Audi A8 D2; Skoda Superb 3u; Audi Allroad 4BH
+- Motores | 2.5 TDI; 2.5 TDI quattro; 2.5 TDI 4motion
+- Potencia del motor (caballos) | 150-180 CV
+- Potencia (kilovatios) | 110-132 kW
+- Año de fabricación | 2000-2008
+- Número de artículo del fabricante | 415 0145 10
+- Número(s) de pieza OE | 059 105 266 T, 059 105 266 H, 059 105 266 E
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A4 B7 Avant; Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A4 B7; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5; Audi A8 D2; Skoda Superb 3u; Audi Allroad 4BH
+- Motores | 2.5 TDI; 2.5 TDI quattro; 2.5 TDI 4motion
+- Potencia del motor (caballos) | 150-180 CV
+- Potencia (kilovatios) | 110-132 kW
+- Año de fabricación | 2000-2008
+- Número de artículo del fabricante | 415 0145 10
+- Número(s) de pieza OE | 059 105 266 T, 059 105 266 H, 059 105 266 E`,
+    specs: `Modelos de auto: Audi A4 B7 Avant; Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A4 B7; Audi A6 C5 Avant; Audi A4 8h; Audi A6 C5; Audi A8 D2; Skoda Superb 3u; Audi Allroad 4BH
+Motores: 2.5 TDI; 2.5 TDI quattro; 2.5 TDI 4motion
+Potencia (CV): 150-180 CV
+Potencia (kW): 110-132 kW
+Año fabricación: 2000-2008
+N° de artículo LUK: 415 0145 10
+N° OEM: 059 105 266 T, 059 105 266 H, 059 105 266 E`,
+    precio: null,
+    ean: `4005108214942`,
+    vcnt: 7,
+  },
+  36: {
+    titulo_ml: `Volante LUK 415 0071 10 Audi A4/A6  2.4/2.8  V6`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0071 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Audi A8 D2; Skoda Superb 3u; Audi A6 C4 Avant; Audi A6 C4
+- Motores: 2.8 4motion; 2.4 quattro; 2.4; 2.8 quattro; 2.8; 2.8 V6 4motion; 2.8 V6; 2.8 V6 Syncro/4motion
+- Potencia del motor  caballos : 136-193 CV
+- Potencia  kilovatios : 100-142 kW
+- A o de fabricaci n: 1995-2008
+- N mero de art culo del fabricante: 415 0071 10
+- N mero s  de pieza OE: 078 105 266 M, 078 105 266 AE, 078 105 266 G, 078 105 266 L
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Audi A8 D2; Skoda Superb 3u; Audi A6 C4 Avant; Audi A6 C4
+- Motores | 2.8 4motion; 2.4 quattro; 2.4; 2.8 quattro; 2.8; 2.8 V6 4motion; 2.8 V6; 2.8 V6 Syncro/4motion
+- Potencia del motor (caballos) | 136-193 CV
+- Potencia (kilovatios) | 100-142 kW
+- Año de fabricación | 1995-2008
+- Número de artículo del fabricante | 415 0071 10
+- Número(s) de pieza OE | 078 105 266 M, 078 105 266 AE, 078 105 266 G, 078 105 266 L
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Audi A8 D2; Skoda Superb 3u; Audi A6 C4 Avant; Audi A6 C4
+- Motores | 2.8 4motion; 2.4 quattro; 2.4; 2.8 quattro; 2.8; 2.8 V6 4motion; 2.8 V6; 2.8 V6 Syncro/4motion
+- Potencia del motor (caballos) | 136-193 CV
+- Potencia (kilovatios) | 100-142 kW
+- Año de fabricación | 1995-2008
+- Número de artículo del fabricante | 415 0071 10
+- Número(s) de pieza OE | 078 105 266 M, 078 105 266 AE, 078 105 266 G, 078 105 266 L`,
+    specs: `Modelos de auto: VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Audi A8 D2; Skoda Superb 3u; Audi A6 C4 Avant; Audi A6 C4
+Motores: 2.8 4motion; 2.4 quattro; 2.4; 2.8 quattro; 2.8; 2.8 V6 4motion; 2.8 V6; 2.8 V6 Syncro/4motion
+Potencia (CV): 136-193 CV
+Potencia (kW): 100-142 kW
+Año fabricación: 1995-2008
+N° de artículo LUK: 415 0071 10
+N° OEM: 078 105 266 M, 078 105 266 AE, 078 105 266 G, 078 105 266 L`,
+    precio: null,
+    ean: `4005108013118`,
+    vcnt: 7,
+  },
+  37: {
+    titulo_ml: `Volante LUK 415 0165 10 Audi TT/Audi A3/Seat Leon 1.8T (AUQ)`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0165 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A3 8L; Seat Leon Mk1; Audi TT 8N; Audi TT 8N Roadster
+- Motores: S3 quattro; 1.8 T quattro; 1.8 20V T 4
+- Potencia del motor  caballos : 180-224 CV
+- Potencia  kilovatios : 132-165 kW
+- A o de fabricaci n: 1998-2006
+- N mero de art culo del fabricante: 415 0165 10
+- N mero s  de pieza OE: 06A 105 266 AC, 06A 105 266 AA
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A3 8L; Seat Leon Mk1; Audi TT 8N; Audi TT 8N Roadster
+- Motores | S3 quattro; 1.8 T quattro; 1.8 20V T 4
+- Potencia del motor (caballos) | 180-224 CV
+- Potencia (kilovatios) | 132-165 kW
+- Año de fabricación | 1998-2006
+- Número de artículo del fabricante | 415 0165 10
+- Número(s) de pieza OE | 06A 105 266 AC, 06A 105 266 AA
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A3 8L; Seat Leon Mk1; Audi TT 8N; Audi TT 8N Roadster
+- Motores | S3 quattro; 1.8 T quattro; 1.8 20V T 4
+- Potencia del motor (caballos) | 180-224 CV
+- Potencia (kilovatios) | 132-165 kW
+- Año de fabricación | 1998-2006
+- Número de artículo del fabricante | 415 0165 10
+- Número(s) de pieza OE | 06A 105 266 AC, 06A 105 266 AA`,
+    specs: `Modelos de auto: Audi A3 8L; Seat Leon Mk1; Audi TT 8N; Audi TT 8N Roadster
+Motores: S3 quattro; 1.8 T quattro; 1.8 20V T 4
+Potencia (CV): 180-224 CV
+Potencia (kW): 132-165 kW
+Año fabricación: 1998-2006
+N° de artículo LUK: 415 0165 10
+N° OEM: 06A 105 266 AC, 06A 105 266 AA`,
+    precio: null,
+    ean: `4005108233806`,
+    vcnt: 7,
+  },
+  38: {
+    titulo_ml: `Volante LUK 415 0478 10 Ford Focus M/N 1.8 DSL`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0478 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Número de pieza: 415 0478 10
+- Marca: LUK
+
+VEHICULO COMPATIBLE:
+- Volante Bimasa Ford Focus M/N 1.8 DSL
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: ``,
+    specs: ``,
+    precio: null,
+    ean: `1352798`,
+    vcnt: 0,
+  },
+  39: {
+    titulo_ml: `Volante LUK 415 0181 10 Ford Mondeo 2.0 TDCI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0181 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Ford Mondeo Mk3
+- Motores: 2.0 16V TDDi / TDCi
+- Potencia del motor  caballos : 115 CV
+- Potencia  kilovatios : 85 kW
+- A o de fabricaci n: 2000-2007
+- N mero de art culo del fabricante: 415 0181 10
+- N mero s  de pieza OE: 1128990, 1S71 6477 FA
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Ford Mondeo Mk3
+- Motores | 2.0 16V TDDi / TDCi
+- Potencia del motor (caballos) | 115 CV
+- Potencia (kilovatios) | 85 kW
+- Año de fabricación | 2000-2007
+- Número de artículo del fabricante | 415 0181 10
+- Número(s) de pieza OE | 1128990, 1S71 6477 FA
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Ford Mondeo Mk3
+- Motores | 2.0 16V TDDi / TDCi
+- Potencia del motor (caballos) | 115 CV
+- Potencia (kilovatios) | 85 kW
+- Año de fabricación | 2000-2007
+- Número de artículo del fabricante | 415 0181 10
+- Número(s) de pieza OE | 1128990, 1S71 6477 FA`,
+    specs: `Modelos de auto: Ford Mondeo Mk3 Hatchback; Ford Mondeo bwy; Ford Mondeo Mk3
+Motores: 2.0 16V TDDi / TDCi
+Potencia (CV): 115 CV
+Potencia (kW): 85 kW
+Año fabricación: 2000-2007
+N° de artículo LUK: 415 0181 10
+N° OEM: 1128990, 1S71 6477 FA`,
+    precio: null,
+    ean: `4005108235312`,
+    vcnt: 7,
+  },
+  40: {
+    titulo_ml: `Volante LUK 415 0170 10 Ford Transit`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0170 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Transit mk5 Furgón; Transit Mk5 Camión de plataforma/Chasis (V184; V185); Ford Transit Mk5 Bus
+- Motores: 2.0 DI
+- Potencia del motor  caballos : 100 CV
+- Potencia  kilovatios : 74 kW
+- A o de fabricaci n: 2000-2006
+- N mero de art culo del fabricante: 415 0170 10
+- N mero s  de pieza OE: 4178966, 1C15 6477 BB, 1C15 6477 BA
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Transit mk5 Furgón; Transit Mk5 Camión de plataforma/Chasis (V184; V185); Ford Transit Mk5 Bus
+- Motores | 2.0 DI
+- Potencia del motor (caballos) | 100 CV
+- Potencia (kilovatios) | 74 kW
+- Año de fabricación | 2000-2006
+- Número de artículo del fabricante | 415 0170 10
+- Número(s) de pieza OE | 4178966, 1C15 6477 BB, 1C15 6477 BA
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Transit mk5 Furgón; Transit Mk5 Camión de plataforma/Chasis (V184; V185); Ford Transit Mk5 Bus
+- Motores | 2.0 DI
+- Potencia del motor (caballos) | 100 CV
+- Potencia (kilovatios) | 74 kW
+- Año de fabricación | 2000-2006
+- Número de artículo del fabricante | 415 0170 10
+- Número(s) de pieza OE | 4178966, 1C15 6477 BB, 1C15 6477 BA`,
+    specs: `Modelos de auto: Ford Transit mk5 Furgón; Transit Mk5 Camión de plataforma/Chasis (V184; V185); Ford Transit Mk5 Bus
+Motores: 2.0 DI
+Potencia (CV): 100 CV
+Potencia (kW): 74 kW
+Año fabricación: 2000-2006
+N° de artículo LUK: 415 0170 10
+N° OEM: 4178966, 1C15 6477 BB, 1C15 6477 BA`,
+    precio: null,
+    ean: `4005108230157`,
+    vcnt: 7,
+  },
+  41: {
+    titulo_ml: `Volante LUK 415 0180 10 Ford Transit M/N 2.4 16V`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0180 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Ford Transit mk5 Furgón; Transit Mk5 Camión de plataforma/Chasis (V184; V185); Ford Transit Mk5 Bus
+- Motores: 2.4 TDE; 2.4 DI RWD; 2.4 DI
+- Potencia del motor  caballos : 75-125 CV
+- Potencia  kilovatios : 55-92 kW
+- A o de fabricaci n: 2000-2006
+- N mero de art culo del fabricante: 415 0180 10
+- N mero s  de pieza OE: 4486794, 1C14 6477 CB, 4413743, 1C14 6477 CD, 1C14 6477 CC
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Ford Transit mk5 Furgón; Transit Mk5 Camión de plataforma/Chasis (V184; V185); Ford Transit Mk5 Bus
+- Motores | 2.4 TDE; 2.4 DI RWD; 2.4 DI
+- Potencia del motor (caballos) | 75-125 CV
+- Potencia (kilovatios) | 55-92 kW
+- Año de fabricación | 2000-2006
+- Número de artículo del fabricante | 415 0180 10
+- Número(s) de pieza OE | 4486794, 1C14 6477 CB, 4413743, 1C14 6477 CD, 1C14 6477 CC
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Ford Transit mk5 Furgón; Transit Mk5 Camión de plataforma/Chasis (V184; V185); Ford Transit Mk5 Bus
+- Motores | 2.4 TDE; 2.4 DI RWD; 2.4 DI
+- Potencia del motor (caballos) | 75-125 CV
+- Potencia (kilovatios) | 55-92 kW
+- Año de fabricación | 2000-2006
+- Número de artículo del fabricante | 415 0180 10
+- Número(s) de pieza OE | 4486794, 1C14 6477 CB, 4413743, 1C14 6477 CD, 1C14 6477 CC`,
+    specs: `Modelos de auto: Ford Transit mk5 Furgón; Transit Mk5 Camión de plataforma/Chasis (V184; V185); Ford Transit Mk5 Bus
+Motores: 2.4 TDE; 2.4 DI RWD; 2.4 DI
+Potencia (CV): 75-125 CV
+Potencia (kW): 55-92 kW
+Año fabricación: 2000-2006
+N° de artículo LUK: 415 0180 10
+N° OEM: 4486794, 1C14 6477 CB, 4413743, 1C14 6477 CD, 1C14 6477 CC`,
+    precio: null,
+    ean: `4005108234629`,
+    vcnt: 7,
+  },
+  42: {
+    titulo_ml: `Volante LUK 415 0115 10 Golf IV 2.8 V6`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0115 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 4; Seat Leon Mk1; VW Golf 4 Variant; VW Bora 1j2; VW Beetle 9c; VW Bora Variant
+- Motores: 3.2 R32 4motion; 2.3 V5 4motion; 2.8 VR6 4motion; 2.8 Cupra 4; 2.8 V6 4motion; 3.2 RSI 4motion
+- Potencia del motor  caballos : 150-241 CV
+- Potencia  kilovatios : 110-177 kW
+- A o de fabricaci n: 1998-2006
+- N mero de art culo del fabricante: 415 0115 10
+- N mero s  de pieza OE: 021 105 266 J, 021 105 266 E, 021 105 266 H
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 4; Seat Leon Mk1; VW Golf 4 Variant; VW Bora 1j2; VW Beetle 9c; VW Bora Variant
+- Motores | 3.2 R32 4motion; 2.3 V5 4motion; 2.8 VR6 4motion; 2.8 Cupra 4; 2.8 V6 4motion; 3.2 RSI 4motion
+- Potencia del motor (caballos) | 150-241 CV
+- Potencia (kilovatios) | 110-177 kW
+- Año de fabricación | 1998-2006
+- Número de artículo del fabricante | 415 0115 10
+- Número(s) de pieza OE | 021 105 266 J, 021 105 266 E, 021 105 266 H
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 4; Seat Leon Mk1; VW Golf 4 Variant; VW Bora 1j2; VW Beetle 9c; VW Bora Variant
+- Motores | 3.2 R32 4motion; 2.3 V5 4motion; 2.8 VR6 4motion; 2.8 Cupra 4; 2.8 V6 4motion; 3.2 RSI 4motion
+- Potencia del motor (caballos) | 150-241 CV
+- Potencia (kilovatios) | 110-177 kW
+- Año de fabricación | 1998-2006
+- Número de artículo del fabricante | 415 0115 10
+- Número(s) de pieza OE | 021 105 266 J, 021 105 266 E, 021 105 266 H`,
+    specs: `Modelos de auto: Golf 4; Seat Leon Mk1; VW Golf 4 Variant; VW Bora 1j2; VW Beetle 9c; VW Bora Variant
+Motores: 3.2 R32 4motion; 2.3 V5 4motion; 2.8 VR6 4motion; 2.8 Cupra 4; 2.8 V6 4motion; 3.2 RSI 4motion
+Potencia (CV): 150-241 CV
+Potencia (kW): 110-177 kW
+Año fabricación: 1998-2006
+N° de artículo LUK: 415 0115 10
+N° OEM: 021 105 266 J, 021 105 266 E, 021 105 266 H`,
+    precio: null,
+    ean: `4005108213341`,
+    vcnt: 7,
+  },
+  43: {
+    titulo_ml: `Volante LUK 415 0334 10 Passat 1.8 TFSI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0334 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat 365; Passat B6; Skoda Octavia 2; Audi TT 8J; Skoda Superb 3t5; VW Passat CC; Seat Altea 5p1; Seat Altea XL; VW Passat B7 Berlina; VW Passat B7 Alltrack; VW CC 358; Skoda Superb 3t; Audi A3 Cabrio; Audi TT Roadster
+- Motores: 1.8 TSI; 1.8 TFSI
+- Potencia del motor  caballos : 152-160 CV
+- Potencia  kilovatios : 112-118 kW
+- A o de fabricaci n: 2006-2016
+- N mero de art culo del fabricante: 415 0334 10
+- N mero s  de pieza OE: 06J 105 266 K, 06J 105 266 AS, 06J 105 266 B, 06J105266J
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat 365; Passat B6; Skoda Octavia 2; Audi TT 8J; Skoda Superb 3t5; VW Passat CC; Seat Altea 5p1; Seat Altea XL; VW Passat B7 Berlina; VW Passat B7 Alltrack; VW CC 358; Skoda Superb 3t; Audi A3 Cabrio; Audi TT Roadster
+- Motores | 1.8 TSI; 1.8 TFSI
+- Potencia del motor (caballos) | 152-160 CV
+- Potencia (kilovatios) | 112-118 kW
+- Año de fabricación | 2006-2016
+- Número de artículo del fabricante | 415 0334 10
+- Número(s) de pieza OE | 06J 105 266 K, 06J 105 266 AS, 06J 105 266 B, 06J105266J
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat 365; Passat B6; Skoda Octavia 2; Audi TT 8J; Skoda Superb 3t5; VW Passat CC; Seat Altea 5p1; Seat Altea XL; VW Passat B7 Berlina; VW Passat B7 Alltrack; VW CC 358; Skoda Superb 3t; Audi A3 Cabrio; Audi TT Roadster
+- Motores | 1.8 TSI; 1.8 TFSI
+- Potencia del motor (caballos) | 152-160 CV
+- Potencia (kilovatios) | 112-118 kW
+- Año de fabricación | 2006-2016
+- Número de artículo del fabricante | 415 0334 10
+- Número(s) de pieza OE | 06J 105 266 K, 06J 105 266 AS, 06J 105 266 B, 06J105266J`,
+    specs: `Modelos de auto: Golf 6; Audi A3 Sportback 8P; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Passat 365; Passat B6; Skoda Octavia 2; Audi TT 8J; Skoda Superb 3t5; VW Passat CC; Seat Altea 5p1; Seat Altea XL; VW Passat B7 Berlina; VW Passat B7 Alltrack; VW CC 358; Skoda Superb 3t; Audi A3 Cabrio; Audi TT Roadster
+Motores: 1.8 TSI; 1.8 TFSI
+Potencia (CV): 152-160 CV
+Potencia (kW): 112-118 kW
+Año fabricación: 2006-2016
+N° de artículo LUK: 415 0334 10
+N° OEM: 06J 105 266 K, 06J 105 266 AS, 06J 105 266 B, 06J105266J`,
+    precio: null,
+    ean: `4005108527301`,
+    vcnt: 7,
+  },
+  44: {
+    titulo_ml: `Volante LUK 415 0114 10 Passat 1.9 TDI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0114 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Passat 3b5; Passat 3b2
+- Motores: 1.9 TDI 4motion; 1.9 TDI; 1.9 TDI quattro
+- Potencia del motor  caballos : 115-130 CV
+- Potencia  kilovatios : 85-96 kW
+- A o de fabricaci n: 1998-2005
+- N mero de art culo del fabricante: 415 0114 10
+- N mero s  de pieza OE: 038 105 266 K
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Passat 3b5; Passat 3b2
+- Motores | 1.9 TDI 4motion; 1.9 TDI; 1.9 TDI quattro
+- Potencia del motor (caballos) | 115-130 CV
+- Potencia (kilovatios) | 85-96 kW
+- Año de fabricación | 1998-2005
+- Número de artículo del fabricante | 415 0114 10
+- Número(s) de pieza OE | 038 105 266 K
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Passat 3b5; Passat 3b2
+- Motores | 1.9 TDI 4motion; 1.9 TDI; 1.9 TDI quattro
+- Potencia del motor (caballos) | 115-130 CV
+- Potencia (kilovatios) | 85-96 kW
+- Año de fabricación | 1998-2005
+- Número de artículo del fabricante | 415 0114 10
+- Número(s) de pieza OE | 038 105 266 K`,
+    specs: `Modelos de auto: VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Passat 3b5; Passat 3b2
+Motores: 1.9 TDI 4motion; 1.9 TDI; 1.9 TDI quattro
+Potencia (CV): 115-130 CV
+Potencia (kW): 85-96 kW
+Año fabricación: 1998-2005
+N° de artículo LUK: 415 0114 10
+N° OEM: 038 105 266 K`,
+    precio: null,
+    ean: `4005108183033`,
+    vcnt: 7,
+  },
+  45: {
+    titulo_ml: `Volante LUK 415 0548 09 Passat 2.0 TDI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0548 09
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Golf 5 Plus; Passat B6; Scirocco 3; Skoda Octavia 2; Golf AJ5; Skoda Superb 3t5; Skoda Yeti 5l; VW Passat CC; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7
+- Motores: 2.0 TDI; 2.0 TDI 16V; 2.0 TDI 4motion; 2.0 BlueTDI; 2.0 TDI RS; 2.0 TDI 4x4
+- Potencia del motor  caballos : 110-170 CV
+- Potencia  kilovatios : 81-125 kW
+- A o de fabricaci n: 2003-2017
+- N mero de art culo del fabricante: 415 0548 09
+- N mero s  de pieza OE: 03L 105 266 DC, 03L 105 266 AE
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Golf 5 Plus; Passat B6; Scirocco 3; Skoda Octavia 2; Golf AJ5; Skoda Superb 3t5; Skoda Yeti 5l; VW Passat CC; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7
+- Motores | 2.0 TDI; 2.0 TDI 16V; 2.0 TDI 4motion; 2.0 BlueTDI; 2.0 TDI RS; 2.0 TDI 4x4
+- Potencia del motor (caballos) | 110-170 CV
+- Potencia (kilovatios) | 81-125 kW
+- Año de fabricación | 2003-2017
+- Número de artículo del fabricante | 415 0548 09
+- Número(s) de pieza OE | 03L 105 266 DC, 03L 105 266 AE
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Golf 5 Plus; Passat B6; Scirocco 3; Skoda Octavia 2; Golf AJ5; Skoda Superb 3t5; Skoda Yeti 5l; VW Passat CC; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7
+- Motores | 2.0 TDI; 2.0 TDI 16V; 2.0 TDI 4motion; 2.0 BlueTDI; 2.0 TDI RS; 2.0 TDI 4x4
+- Potencia del motor (caballos) | 110-170 CV
+- Potencia (kilovatios) | 81-125 kW
+- Año de fabricación | 2003-2017
+- Número de artículo del fabricante | 415 0548 09
+- Número(s) de pieza OE | 03L 105 266 DC, 03L 105 266 AE`,
+    specs: `Modelos de auto: Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; Audi A3 8P1; Passat B6 Variant; Seat León 2; Octavia 1z5; Golf 5 Plus; Passat B6; Scirocco 3; Skoda Octavia 2; Golf AJ5; Skoda Superb 3t5; Skoda Yeti 5l; VW Passat CC; VW Golf 1k5; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7
+Motores: 2.0 TDI; 2.0 TDI 16V; 2.0 TDI 4motion; 2.0 BlueTDI; 2.0 TDI RS; 2.0 TDI 4x4
+Potencia (CV): 110-170 CV
+Potencia (kW): 81-125 kW
+Año fabricación: 2003-2017
+N° de artículo LUK: 415 0548 09
+N° OEM: 03L 105 266 DC, 03L 105 266 AE`,
+    precio: null,
+    ean: `4005108799739`,
+    vcnt: 7,
+  },
+  46: {
+    titulo_ml: `Volante LUK 415 0231 10 Passat/Audi A4 1.9 TDI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0231 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Skoda Superb 3u
+- Motores: 1.9 TDI
+- Potencia del motor  caballos : 101-130 CV
+- Potencia  kilovatios : 74-96 kW
+- A o de fabricaci n: 1998-2008
+- N mero de art culo del fabricante: 415 0231 10
+- N mero s  de pieza OE: 038 105 266 AN, 038 105 266 AM, 038 105 266 A, 038 105 266 AK, 038105266AB
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Skoda Superb 3u
+- Motores | 1.9 TDI
+- Potencia del motor (caballos) | 101-130 CV
+- Potencia (kilovatios) | 74-96 kW
+- Año de fabricación | 1998-2008
+- Número de artículo del fabricante | 415 0231 10
+- Número(s) de pieza OE | 038 105 266 AN, 038 105 266 AM, 038 105 266 A, 038 105 266 AK, 038105266AB
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Skoda Superb 3u
+- Motores | 1.9 TDI
+- Potencia del motor (caballos) | 101-130 CV
+- Potencia (kilovatios) | 74-96 kW
+- Año de fabricación | 1998-2008
+- Número de artículo del fabricante | 415 0231 10
+- Número(s) de pieza OE | 038 105 266 AN, 038 105 266 AM, 038 105 266 A, 038 105 266 AK, 038105266AB`,
+    specs: `Modelos de auto: Audi A4 B6 Avant; VW Passat B5 GP Variant; Audi A4 B6; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Skoda Superb 3u
+Motores: 1.9 TDI
+Potencia (CV): 101-130 CV
+Potencia (kW): 74-96 kW
+Año fabricación: 1998-2008
+N° de artículo LUK: 415 0231 10
+N° OEM: 038 105 266 AN, 038 105 266 AM, 038 105 266 A, 038 105 266 AK, 038105266AB`,
+    precio: null,
+    ean: `4005108530608`,
+    vcnt: 7,
+  },
+  47: {
+    titulo_ml: `Volante LUK 415 0078 10 Passat/Audi A4 TDI V6`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0078 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Audi A8 D2
+- Motores: 2.5 TDI 4motion; 2.5 TDI; 2.5 TDI quattro; 2.5 TDI Syncro/4motion
+- Potencia del motor  caballos : 150 CV
+- Potencia  kilovatios : 110 kW
+- A o de fabricaci n: 1997-2005
+- N mero de art culo del fabricante: 415 0078 10
+- N mero s  de pieza OE: 059 105 266 A
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Audi A8 D2
+- Motores | 2.5 TDI 4motion; 2.5 TDI; 2.5 TDI quattro; 2.5 TDI Syncro/4motion
+- Potencia del motor (caballos) | 150 CV
+- Potencia (kilovatios) | 110 kW
+- Año de fabricación | 1997-2005
+- Número de artículo del fabricante | 415 0078 10
+- Número(s) de pieza OE | 059 105 266 A
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Audi A8 D2
+- Motores | 2.5 TDI 4motion; 2.5 TDI; 2.5 TDI quattro; 2.5 TDI Syncro/4motion
+- Potencia del motor (caballos) | 150 CV
+- Potencia (kilovatios) | 110 kW
+- Año de fabricación | 1997-2005
+- Número de artículo del fabricante | 415 0078 10
+- Número(s) de pieza OE | 059 105 266 A`,
+    specs: `Modelos de auto: VW Passat B5 GP Variant; Passat B5; Audi A4 B5; Audi A4 B5 Avant; Audi A6 C5 Avant; Passat 3b5; Audi A6 C5; Passat 3b2; Audi A8 D2
+Motores: 2.5 TDI 4motion; 2.5 TDI; 2.5 TDI quattro; 2.5 TDI Syncro/4motion
+Potencia (CV): 150 CV
+Potencia (kW): 110 kW
+Año fabricación: 1997-2005
+N° de artículo LUK: 415 0078 10
+N° OEM: 059 105 266 A`,
+    precio: null,
+    ean: `4005108061140`,
+    vcnt: 7,
+  },
+  48: {
+    titulo_ml: `Volante LUK 415 0059 10 Sharan 1.9 TDI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0059 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Número de pieza: 415 0059 10
+- Marca: LUK
+
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: ``,
+    specs: ``,
+    precio: null,
+    ean: `2503001254901`,
+    vcnt: 0,
+  },
+  49: {
+    titulo_ml: `Volante LUK 415 0457 10 Tiguan`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0457 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: VW Tiguan 5N
+- Motores: 2.0 TDI 4motion; 2.0 TDI
+- Potencia del motor  caballos : 136-140 CV
+- Potencia  kilovatios : 100-103 kW
+- A o de fabricaci n: 2007-2018
+- N mero de art culo del fabricante: 415 0457 10
+- N mero s  de pieza OE: 03L 105 266 Q
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | VW Tiguan 5N
+- Motores | 2.0 TDI 4motion; 2.0 TDI
+- Potencia del motor (caballos) | 136-140 CV
+- Potencia (kilovatios) | 100-103 kW
+- Año de fabricación | 2007-2018
+- Número de artículo del fabricante | 415 0457 10
+- Número(s) de pieza OE | 03L 105 266 Q
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | VW Tiguan 5N
+- Motores | 2.0 TDI 4motion; 2.0 TDI
+- Potencia del motor (caballos) | 136-140 CV
+- Potencia (kilovatios) | 100-103 kW
+- Año de fabricación | 2007-2018
+- Número de artículo del fabricante | 415 0457 10
+- Número(s) de pieza OE | 03L 105 266 Q`,
+    specs: `Modelos de auto: VW Tiguan 5N
+Motores: 2.0 TDI 4motion; 2.0 TDI
+Potencia (CV): 136-140 CV
+Potencia (kW): 100-103 kW
+Año fabricación: 2007-2018
+N° de artículo LUK: 415 0457 10
+N° OEM: 03L 105 266 Q`,
+    precio: null,
+    ean: `4005108608390`,
+    vcnt: 7,
+  },
+  50: {
+    titulo_ml: `Kit Embrague LUK 619 3005 09 Ford Courier`,
+    descripcion: `KIT DE EMBRAGUE LUK - 619 3005 09
+Marca reconocida mundialmente. Fabricación de precisión OEM.
+
+ESPECIFICACIONES TECNICAS:
+- Número de pieza: 619 3005 09
+- Marca: LUK
+
+VEHICULO COMPATIBLE:
+- Kit Embrague LUK 619 3005 09 Ford Courier
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: ``,
+    specs: ``,
+    precio: null,
+    ean: ``,
+    vcnt: 0,
+  },
+  51: {
+    titulo_ml: `Volante LUK 415 0491 09 Vento 1.9`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0491 09
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Número de pieza: 415 0491 09
+- Marca: LUK
+
+VEHICULO COMPATIBLE:
+- Volante Bimasa Vento 1.9
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: ``,
+    specs: ``,
+    precio: null,
+    ean: `03G105266BE/CG`,
+    vcnt: 0,
+  },
+  52: {
+    titulo_ml: `Volante LUK 415 0431 10 Vento 2.0 TDI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0431 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; VW Tiguan 5N; Audi A3 8P1; Passat B6 Variant; Audi A6 4f; Seat León 2; Octavia 1z5; Passat 365; Golf 5 Plus; VW Caddy 3 Furgón; Touran 1t3; Passat B6; Audi A6 C6; VW Sharan 7n; Audi Q3 8u; VW Caddy 3; Scirocco 3
+- Motores: 2.0 TDI 4motion; 2.0 TDI; 2.0 TDI 16V 4motion; 1.9 TDI 4motion; 2.0 TDI 16V; 2.0 TDI quattro; 2.0 TDI 16V quattro; 1.9 TDI; 2.0 BlueTDI; 2.0 TDI RS; 2.0 TDI 4x4; 1.9 TDI 4x4; 2.0 TDI 16V 4x4; 2.0 TDI 4Drive
+- Potencia del motor  caballos : 85-170 CV
+- Potencia  kilovatios : 62-125 kW
+- A o de fabricaci n: 2003-2022
+- N mero de art culo del fabricante: 415 0431 10
+- N mero s  de pieza OE: 03G 105 266 BN, 03L 105 266 DL, 03L 105 266 BM, 03L 105 266 DM, 03L 105 266 K
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; VW Tiguan 5N; Audi A3 8P1; Passat B6 Variant; Audi A6 4f; Seat León 2; Octavia 1z5; Passat 365; Golf 5 Plus; VW Caddy 3 Furgón; Touran 1t3; Passat B6; Audi A6 C6; VW Sharan 7n; Audi Q3 8u; VW Caddy 3; Scirocco 3
+- Motores | 2.0 TDI 4motion; 2.0 TDI; 2.0 TDI 16V 4motion; 1.9 TDI 4motion; 2.0 TDI 16V; 2.0 TDI quattro; 2.0 TDI 16V quattro; 1.9 TDI; 2.0 BlueTDI; 2.0 TDI RS; 2.0 TDI 4x4; 1.9 TDI 4x4; 2.0 TDI 16V 4x4; 2.0 TDI 4Drive
+- Potencia del motor (caballos) | 85-170 CV
+- Potencia (kilovatios) | 62-125 kW
+- Año de fabricación | 2003-2022
+- Número de artículo del fabricante | 415 0431 10
+- Número(s) de pieza OE | 03G 105 266 BN, 03L 105 266 DL, 03L 105 266 BM, 03L 105 266 DM, 03L 105 266 K
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; VW Tiguan 5N; Audi A3 8P1; Passat B6 Variant; Audi A6 4f; Seat León 2; Octavia 1z5; Passat 365; Golf 5 Plus; VW Caddy 3 Furgón; Touran 1t3; Passat B6; Audi A6 C6; VW Sharan 7n; Audi Q3 8u; VW Caddy 3; Scirocco 3
+- Motores | 2.0 TDI 4motion; 2.0 TDI; 2.0 TDI 16V 4motion; 1.9 TDI 4motion; 2.0 TDI 16V; 2.0 TDI quattro; 2.0 TDI 16V quattro; 1.9 TDI; 2.0 BlueTDI; 2.0 TDI RS; 2.0 TDI 4x4; 1.9 TDI 4x4; 2.0 TDI 16V 4x4; 2.0 TDI 4Drive
+- Potencia del motor (caballos) | 85-170 CV
+- Potencia (kilovatios) | 62-125 kW
+- Año de fabricación | 2003-2022
+- Número de artículo del fabricante | 415 0431 10
+- Número(s) de pieza OE | 03G 105 266 BN, 03L 105 266 DL, 03L 105 266 BM, 03L 105 266 DM, 03L 105 266 K`,
+    specs: `Modelos de auto: Golf 5; Golf 6; Audi A3 Sportback 8P; Touran 1T2; VW Tiguan 5N; Audi A3 8P1; Passat B6 Variant; Audi A6 4f; Seat León 2; Octavia 1z5; Passat 365; Golf 5 Plus; VW Caddy 3 Furgón; Touran 1t3; Passat B6; Audi A6 C6; VW Sharan 7n; Audi Q3 8u; VW Caddy 3; Scirocco 3
+Motores: 2.0 TDI 4motion; 2.0 TDI; 2.0 TDI 16V 4motion; 1.9 TDI 4motion; 2.0 TDI 16V; 2.0 TDI quattro; 2.0 TDI 16V quattro; 1.9 TDI; 2.0 BlueTDI; 2.0 TDI RS; 2.0 TDI 4x4; 1.9 TDI 4x4; 2.0 TDI 16V 4x4; 2.0 TDI 4Drive
+Potencia (CV): 85-170 CV
+Potencia (kW): 62-125 kW
+Año fabricación: 2003-2022
+N° de artículo LUK: 415 0431 10
+N° OEM: 03G 105 266 BN, 03L 105 266 DL, 03L 105 266 BM, 03L 105 266 DM, 03L 105 266 K`,
+    precio: null,
+    ean: `4005108579836`,
+    vcnt: 7,
+  },
+  53: {
+    titulo_ml: `Volante LUK 415 0581 09 Vento 2.0 TDI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0581 09
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Número de pieza: 415 0581 09
+- Marca: LUK
+
+VEHICULO COMPATIBLE:
+- Volante Bimasa Vento 2.0 TDI
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: ``,
+    specs: ``,
+    precio: null,
+    ean: `03G105266Q/AR/BD`,
+    vcnt: 0,
+  },
+  54: {
+    titulo_ml: `Volante LUK 415 0342 10 Vento GTI`,
+    descripcion: `VOLANTE DE MASA DOBLE LUK - 415 0342 10
+Tecnología de amortiguación de vibraciones. Fabricación OEM LUK.
+
+ESPECIFICACIONES TECNICAS:
+- Modelos de coche: Golf 5; Passat B6 Variant; Seat León 2; Passat B6; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; Seat Toledo 3
+- Motores: 2.0 GTI; 2.0 TFSI; 2.0 TFSI 4x4
+- Potencia del motor  caballos : 200 CV
+- Potencia  kilovatios : 147 kW
+- A o de fabricaci n: 2004-2015
+- N mero de art culo del fabricante: 415 0342 10
+- N mero s  de pieza OE: 06F 105 266 AC, 06F 105 266 Q
+
+VEHICULOS COMPATIBLES:
+- Modelos de coche | Golf 5; Passat B6 Variant; Seat León 2; Passat B6; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; Seat Toledo 3
+- Motores | 2.0 GTI; 2.0 TFSI; 2.0 TFSI 4x4
+- Potencia del motor (caballos) | 200 CV
+- Potencia (kilovatios) | 147 kW
+- Año de fabricación | 2004-2015
+- Número de artículo del fabricante | 415 0342 10
+- Número(s) de pieza OE | 06F 105 266 AC, 06F 105 266 Q
+
+PRODUCTO ORIGINAL LUK - REPUESTO DE PRIMERA CALIDAD
+Fabricado según especificaciones OEM. Garantía del fabricante.`,
+    compatibilidades: `- Modelos de coche | Golf 5; Passat B6 Variant; Seat León 2; Passat B6; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; Seat Toledo 3
+- Motores | 2.0 GTI; 2.0 TFSI; 2.0 TFSI 4x4
+- Potencia del motor (caballos) | 200 CV
+- Potencia (kilovatios) | 147 kW
+- Año de fabricación | 2004-2015
+- Número de artículo del fabricante | 415 0342 10
+- Número(s) de pieza OE | 06F 105 266 AC, 06F 105 266 Q`,
+    specs: `Modelos de auto: Golf 5; Passat B6 Variant; Seat León 2; Passat B6; Seat Altea 5p1; Seat Altea XL; VW EOS 1f7; Seat Toledo 3
+Motores: 2.0 GTI; 2.0 TFSI; 2.0 TFSI 4x4
+Potencia (CV): 200 CV
+Potencia (kW): 147 kW
+Año fabricación: 2004-2015
+N° de artículo LUK: 415 0342 10
+N° OEM: 06F 105 266 AC, 06F 105 266 Q`,
+    precio: null,
+    ean: `4005108569516`,
+    vcnt: 7,
+  },
+};
 
 // ════════════════════════════════════════════════════════
 //  ESTADO PUBLICADO — persiste en localStorage
@@ -777,15 +2819,14 @@ function renderCard(p){
     : '';
 
   // ML copy blocks
-  function block(label, val, key){
-    const hasPend = !val;
-    const bodyTxt = hasPend
-      ? `⏳ Pendiente — se cargará con el Excel del scraping`
-      : val;
+  function block(label, val){
+    const hasPend = !val || !val.trim();
+    const bodyTxt = hasPend ? '⚠ Sin datos de scraping para este artículo' : val;
     const bodyCls = hasPend ? 'copy-block-body pend' : 'copy-block-body';
+    const safeval = hasPend ? '' : val.replace(/\\/g,'\\\\').replace(/`/g,"'").replace(/\${/g,'\\${');
     const btnHtml = hasPend
       ? `<span class="copy-block-btn" style="color:#444;cursor:default">—</span>`
-      : `<button class="copy-block-btn" onclick="cpBlock(this,\`${val.replace(/`/g,"'").replace(/\n/g,'\\n')}\`,'${label}')">${IC_COPY} Copiar</button>`;
+      : `<button class="copy-block-btn" onclick="cpBlock(this,\`${safeval}\`,'${label}')">${IC_COPY} Copiar</button>`;
     return `
 <div class="copy-block">
   <div class="copy-block-header">
@@ -795,6 +2836,13 @@ function renderCard(p){
   <div class="${bodyCls}">${bodyTxt.replace(/</g,'&lt;').replace(/\n/g,'<br>')}</div>
 </div>`;
   }
+
+  // Precio formateado
+  const precioFmt = f.precio
+    ? '$' + Number(f.precio).toLocaleString('es-AR')
+    : null;
+  const eanVal = f.ean && f.ean.trim() ? f.ean.trim() : null;
+  const vcntVal = f.vcnt && f.vcnt > 0 ? f.vcnt : null;
 
   return `
 <div class="card${pub?' publicado':''}${sf?' sin-foto':''}" data-id="${p.id}" data-cat="${p.cat}" data-fotos="${sf?0:1}" data-sfoto="${sf?1:0}">
@@ -819,6 +2867,12 @@ function renderCard(p){
         <span class="field-lbl">N° Original</span>
         ${oemHtml}
       </div>
+      ${eanVal ? `
+      <div class="field">
+        <span class="field-lbl">EAN</span>
+        <span class="field-val">${eanVal}</span>
+        <button class="cbtn" onclick="cpField(this,'${eanVal}','EAN')" title="Copiar">${IC_COPY}</button>
+      </div>` : ''}
       <div class="field">
         <span class="field-lbl">Stock</span>
         <span class="field-val">
@@ -828,10 +2882,21 @@ function renderCard(p){
           </span>
         </span>
       </div>
+      ${precioFmt ? `
+      <div class="field">
+        <span class="field-lbl">Precio ARS</span>
+        <span class="field-val" style="color:var(--naranja);font-size:14px;font-weight:800">${precioFmt}</span>
+        <button class="cbtn" onclick="cpField(this,'${f.precio}','Precio')" title="Copiar">${IC_COPY}</button>
+      </div>` : ''}
       <div class="field">
         <span class="field-lbl">Fotos</span>
         <span class="field-val">${fotosHtml}</span>
       </div>
+      ${vcntVal ? `
+      <div class="field">
+        <span class="field-lbl">Vehículos</span>
+        <span class="field-val" style="color:#a78bfa;font-family:var(--font);font-size:12px">🚗 Compatible con ${vcntVal}+ modelos</span>
+      </div>` : ''}
     </div>
 
     <div class="divider"></div>
@@ -841,14 +2906,14 @@ function renderCard(p){
     <div class="copy-block">
       <div class="copy-block-header">
         <span class="copy-block-label">📌 Título ML (${tituloVal.length} chars)</span>
-        <button class="copy-block-btn" onclick="cpBlock(this,'${tituloVal.replace(/'/g,'\\'')}','Título ML')">${IC_COPY} Copiar</button>
+        <button class="copy-block-btn" onclick="cpTitulo(this,${p.id})">${IC_COPY} Copiar</button>
       </div>
       <div class="copy-block-body" style="color:#e8e8e8;font-weight:600;max-height:none">${tituloVal}</div>
     </div>
 
-    ${block('📝 Descripción',          descVal,   'descripcion')}
-    ${block('🚗 Compatibilidades',     compatVal, 'compatibilidades')}
-    ${block('🔧 Ficha Técnica / Specs',specsVal,  'specs')}
+    ${block('📝 Descripción',           descVal)}
+    ${block('🚗 Compatibilidades',      compatVal)}
+    ${block('🔧 Ficha Técnica / Specs', specsVal)}
   </div>
 
   <div class="card-foot">
@@ -865,28 +2930,37 @@ function renderCard(p){
 // ════════════════════════════════════════════════════════
 //  COPY TODO PARA ML
 // ════════════════════════════════════════════════════════
+function cpTitulo(btn,id){
+  const p = DB.find(x=>x.id===id);
+  const t = tituloML(p);
+  cpBlock(btn, t, 'Título ML');
+}
+
 function cpFull(id){
   const p = DB.find(x=>x.id===id);
   const f = FICHAS[id]||{};
+  const precioFmt = f.precio ? '$'+Number(f.precio).toLocaleString('es-AR') : null;
   const lines=[
     '═══════ TÍTULO ═══════',
     tituloML(p),
     '',
     '═══════ DESCRIPCIÓN ═══════',
-    f.descripcion || '(Pendiente de scraping)',
+    f.descripcion || '(Sin datos)',
     '',
-    '═══════ COMPATIBILIDADES ═══════',
-    f.compatibilidades || '(Pendiente de scraping)',
+    '═══════ VEHICULOS COMPATIBLES ═══════',
+    f.compatibilidades || '(Sin datos)',
     '',
     '═══════ FICHA TÉCNICA ═══════',
-    f.specs || '(Pendiente de scraping)',
+    f.specs || '(Sin datos)',
     '',
     '─────────────────────────',
-    `N° LUK: ${p.sku}`,
-    p.oem ? `N° Original: ${p.oem}` : '',
-    `Stock: ${p.qty} ud${p.qty!==1?'s.':'.'}`,
-    'Marca: LUK — Calidad Original',
-  ].filter(l=>l!==undefined).join('\n');
+    `N° LUK:      ${p.sku}`,
+    p.oem        ? `N° Original: ${p.oem}`      : null,
+    f.ean        ? `EAN:         ${f.ean}`       : null,
+    precioFmt    ? `Precio:      ${precioFmt}`   : null,
+    `Stock:       ${p.qty} ud${p.qty!==1?'s.':'.'}`,
+    'Marca:       LUK — Calidad Original',
+  ].filter(l=>l!=null).join('\n');
   copy(lines).then(()=>showToast('✓ Publicación completa copiada'));
 }
 
