@@ -231,6 +231,19 @@
       font-size: 12px; font-weight: 600;
       color: var(--blue); font-family: inherit;
     }
+    .sin-fotos-banner {
+      background: #fff3cd;
+      border-bottom: 1px solid #ffc107;
+      padding: 5px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #7a5700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card.sin-fotos { border-color: #ffc107; }
+    .card.sin-fotos .card-header { background: linear-gradient(135deg, #3a3200 0%, #5a4d00 100%); }
 
     /* ── Card Footer ── */
     .card-footer { padding: 12px 16px; border-top: 1px solid var(--luk-border); }
@@ -317,6 +330,10 @@
       <div class="stat-num" id="stat-stock">—</div>
       <div class="stat-label">Uds. en Stock</div>
     </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-sinfotos" style="color:#ffc107;">—</div>
+      <div class="stat-label">Sin Fotos</div>
+    </div>
   </div>
 </header>
 
@@ -331,6 +348,7 @@
     <button class="filter-btn" data-cat="kit">Kit De Embrague</button>
     <button class="filter-btn" data-cat="volante">Volante Bimasa</button>
     <button class="filter-btn" data-cat="otros">Otros</button>
+    <button class="filter-btn" data-fotos="sin">⚠ Sin fotos</button>
   </div>
   <span id="count-label"></span>
 </div>
@@ -793,6 +811,52 @@ const productos = [
     fotos: 1,
     categoria: "volante",
     carpeta: "415_0457_10"
+  },
+  // ── SIN FOTOS (en stock, requieren fotos) ──
+  {
+    sku: "619 3005 09",
+    descripcion: "Kit De Embrague Ford Courier/Escort/Fiesta/Ka",
+    oem: null,
+    cantidad: 1,
+    fotos: 0,
+    categoria: "kit",
+    carpeta: "619_3005_09"
+  },
+  {
+    sku: "415 0491 09",
+    descripcion: "Volante Bimasa Vento 1.9",
+    oem: "03G105266BE/CG",
+    cantidad: 9,
+    fotos: 0,
+    categoria: "volante",
+    carpeta: "415_0491_09"
+  },
+  {
+    sku: "415 0431 10",
+    descripcion: "Volante Bimasa Vento 2.0 TDI",
+    oem: "03L105266B/J/K/AD/DL/BM",
+    cantidad: 17,
+    fotos: 0,
+    categoria: "volante",
+    carpeta: "415_0431_10"
+  },
+  {
+    sku: "415 0581 09",
+    descripcion: "Volante Bimasa Vento 2.0 TDI",
+    oem: "03G105266Q/AR/BD",
+    cantidad: 7,
+    fotos: 0,
+    categoria: "volante",
+    carpeta: "415_0581_09"
+  },
+  {
+    sku: "415 0342 10",
+    descripcion: "Volante Bimasa Vento GTI",
+    oem: "06F105266Q/AC",
+    cantidad: 9,
+    fotos: 0,
+    categoria: "volante",
+    carpeta: "415_0342_10"
   }
 ];
 
@@ -807,13 +871,15 @@ const ICON_PHOTO= `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" st
 // ════════════════════════════════════════════════════════
 // STATS
 // ════════════════════════════════════════════════════════
-const kits    = productos.filter(p => p.categoria === 'kit').length;
-const vols    = productos.filter(p => p.categoria === 'volante').length;
-const stock   = productos.reduce((s, p) => s + p.cantidad, 0);
-document.getElementById('stat-total').textContent = productos.length;
-document.getElementById('stat-kit').textContent   = kits;
-document.getElementById('stat-vol').textContent   = vols;
-document.getElementById('stat-stock').textContent  = stock;
+const kits     = productos.filter(p => p.categoria === 'kit').length;
+const vols     = productos.filter(p => p.categoria === 'volante').length;
+const stock    = productos.reduce((s, p) => s + p.cantidad, 0);
+const sinFotos = productos.filter(p => p.fotos === 0).length;
+document.getElementById('stat-total').textContent    = productos.length;
+document.getElementById('stat-kit').textContent      = kits;
+document.getElementById('stat-vol').textContent      = vols;
+document.getElementById('stat-stock').textContent    = stock;
+document.getElementById('stat-sinfotos').textContent = sinFotos;
 
 // ════════════════════════════════════════════════════════
 // RENDER
@@ -826,6 +892,9 @@ function catLabel(c) {
 
 function publicacionText(p) {
   const oem = p.oem ? p.oem : '—';
+  const fotoLinea = p.fotos === 0
+    ? `⚠️ Fotos:         Sin imágenes disponibles aún`
+    : `📸 Fotos:         ${p.fotos} imagen${p.fotos !== 1 ? 'es' : ''} disponible${p.fotos !== 1 ? 's' : ''}`;
   const lines = [
     `✅ ${p.descripcion.toUpperCase()} — MARCA LUK`,
     `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
@@ -833,7 +902,7 @@ function publicacionText(p) {
     `📋 N° Original:  ${oem}`,
     `📦 Stock:        ${p.cantidad} unidad${p.cantidad !== 1 ? 'es' : ''} disponible${p.cantidad !== 1 ? 's' : ''}`,
     `🏷️ Marca:         LUK — Calidad Original`,
-    `📸 Fotos:         ${p.fotos} imagen${p.fotos !== 1 ? 'es' : ''} disponible${p.fotos !== 1 ? 's' : ''}`,
+    fotoLinea,
     `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
     `💬 Consultar precio y disponibilidad`
   ];
@@ -842,19 +911,26 @@ function publicacionText(p) {
 
 function renderCard(p, idx) {
   const [label, cls] = catLabel(p.categoria);
+  const sinFotos   = p.fotos === 0;
   const stockClass = p.cantidad <= 2 ? 'stock-low' : '';
   const stockDot   = `<span class="stock-badge ${stockClass}"><span class="dot"></span>${p.cantidad} ud${p.cantidad !== 1 ? 's' : ''}.</span>`;
-  const fotosHtml  = `<span class="fotos-badge">${ICON_PHOTO} ${p.fotos} foto${p.fotos !== 1 ? 's' : ''}</span>`;
+  const fotosHtml  = sinFotos
+    ? `<span style="color:#b85c00;font-size:12px;font-weight:700;">⚠ Sin fotos disponibles</span>`
+    : `<span class="fotos-badge">${ICON_PHOTO} ${p.fotos} foto${p.fotos !== 1 ? 's' : ''}</span>`;
   const oemVal     = p.oem
     ? `<span class="field-value">${p.oem}</span>`
     : `<span class="field-value na">Sin N° Original</span>`;
+  const sinFotosBanner = sinFotos
+    ? `<div class="sin-fotos-banner">⚠ Faltan fotos — artículo pendiente de imágenes</div>`
+    : '';
 
   return `
-<div class="card" data-cat="${p.categoria}" data-idx="${idx}">
+<div class="card${sinFotos ? ' sin-fotos' : ''}" data-cat="${p.categoria}" data-fotos="${sinFotos ? 'sin' : 'con'}" data-idx="${idx}">
   <div class="card-header">
     <span class="cat-badge ${cls}">${label}</span>
     <span class="card-title">${p.descripcion}</span>
   </div>
+  ${sinFotosBanner}
   <div class="card-body">
     <div class="fields">
       <div class="field">
@@ -876,9 +952,7 @@ function renderCard(p, idx) {
       <div class="field">
         <span class="field-label">Fotos</span>
         <span class="field-value">${fotosHtml}</span>
-        <button class="copy-btn" title="Copiar carpeta" onclick="copiarCampo(this,'${p.carpeta}')">
-          ${ICON_COPY}
-        </button>
+        ${!sinFotos ? `<button class="copy-btn" title="Copiar carpeta" onclick="copiarCampo(this,'${p.carpeta}')">${ICON_COPY}</button>` : ''}
       </div>
       <div class="field">
         <span class="field-label">Carpeta</span>
@@ -898,18 +972,20 @@ function renderCard(p, idx) {
 // ════════════════════════════════════════════════════════
 // FILTER & SEARCH
 // ════════════════════════════════════════════════════════
-let currentCat = 'todos';
-let currentQ   = '';
+let currentCat   = 'todos';
+let currentFotos = null; // null = todos, 'sin' = solo sin fotos
+let currentQ     = '';
 
 function getFiltered() {
-  return productos.filter((p, i) => {
-    const catOk = currentCat === 'todos' || p.categoria === currentCat;
-    const q     = currentQ.toLowerCase();
-    const textOk = !q
+  return productos.filter(p => {
+    const catOk   = currentCat === 'todos' || p.categoria === currentCat;
+    const fotosOk = currentFotos === null || (currentFotos === 'sin' && p.fotos === 0);
+    const q       = currentQ.toLowerCase();
+    const textOk  = !q
       || p.descripcion.toLowerCase().includes(q)
       || p.sku.toLowerCase().includes(q)
       || (p.oem && p.oem.toLowerCase().includes(q));
-    return catOk && textOk;
+    return catOk && fotosOk && textOk;
   });
 }
 
@@ -943,9 +1019,23 @@ function renderGrid() {
 // filter buttons
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentCat = btn.dataset.cat;
+    if (btn.dataset.fotos) {
+      // toggle sin-fotos filter
+      const active = btn.classList.contains('active');
+      btn.classList.toggle('active', !active);
+      currentFotos = active ? null : 'sin';
+      // deactivate cat filters when filtering by fotos only
+      if (!active) {
+        document.querySelectorAll('.filter-btn[data-cat]').forEach(b => b.classList.remove('active'));
+        currentCat = 'todos';
+      }
+    } else {
+      document.querySelectorAll('.filter-btn[data-cat]').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn[data-fotos]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCat   = btn.dataset.cat;
+      currentFotos = null;
+    }
     renderGrid();
   });
 });
