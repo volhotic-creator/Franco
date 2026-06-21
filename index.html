@@ -10,24 +10,24 @@
 ══════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --azul:        #001E50;
-  --azul-2:      #00348D;
-  --cielo:       #00B0F0;
-  --cielo-dim:   rgba(0,176,240,.10);
-  --cielo-glow:  rgba(0,176,240,.25);
-  --bg:          #F4F6FA;
+  --azul:        #1A3560;
+  --azul-2:      #2D5A9E;
+  --cielo:       #4183C4;
+  --cielo-dim:   rgba(65,131,196,.10);
+  --cielo-glow:  rgba(65,131,196,.22);
+  --bg:          #F6F4F0;
   --bg-2:        #FFFFFF;
   --card-bg:     #FFFFFF;
-  --card-bg2:    #F4F6FA;
-  --border:      #DDE2ED;
-  --border-hot:  #00B0F0;
-  --texto:       #001E50;
-  --muted:       #6B7A99;
-  --verde:       #00A651;
-  --verde-bg:    rgba(0,166,81,.10);
-  --ambar:       #F59E0B;
-  --rojo:        #E4002B;
-  --rojo-bg:     rgba(228,0,43,.08);
+  --card-bg2:    #F1EEE9;
+  --border:      #DDD9D3;
+  --border-hot:  #4183C4;
+  --texto:       #1A2B42;
+  --muted:       #7A8599;
+  --verde:       #1B8A52;
+  --verde-bg:    rgba(27,138,82,.10);
+  --ambar:       #C47E12;
+  --rojo:        #C92B2B;
+  --rojo-bg:     rgba(201,43,43,.08);
   --radius:      10px;
   --radius-sm:   6px;
   --font:        'Segoe UI','SF Pro Display',-apple-system,BlinkMacSystemFont,sans-serif;
@@ -445,18 +445,6 @@ body{
 #toast.show{transform:translateX(-50%) translateY(0)}
 
 /* ══════════════════════════════════════════════
-   EMPTY STATE
-══════════════════════════════════════════════ */
-#empty{
-  display:none;
-  grid-column:1/-1;
-  text-align:center;padding:60px 20px;
-  color:var(--muted);
-}
-#empty .big{font-size:48px;margin-bottom:12px}
-#empty p{font-size:15px}
-
-/* ══════════════════════════════════════════════
    INFO STRIP (badges under card header)
 ══════════════════════════════════════════════ */
 .info-strip{
@@ -596,6 +584,75 @@ body{
 .cp-sub-btn svg{width:10px;height:10px}
 
 /* ══════════════════════════════════════════════
+   DEADLINE STRIP
+══════════════════════════════════════════════ */
+.deadline-strip{
+  background:var(--azul);
+  padding:8px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;
+  transition:background .4s;
+}
+.deadline-strip.warning{background:#7A5400}
+.deadline-strip.urgent{background:#8B1A1A}
+
+.dl-left{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:rgba(255,255,255,.6);
+}
+.dl-left strong{color:#fff;font-weight:700}
+
+.dl-center{
+  display:flex;align-items:baseline;gap:6px;
+}
+.dl-days{
+  font-size:28px;font-weight:900;
+  color:#fff;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.dl-days-lbl{
+  font-size:11px;color:rgba(255,255,255,.55);
+  text-transform:uppercase;letter-spacing:.6px;
+}
+
+.dl-right{
+  display:flex;flex-direction:column;align-items:flex-end;gap:2px;
+}
+.dl-prog{
+  font-size:12px;font-weight:700;color:#fff;
+}
+.dl-meta{
+  font-size:11px;color:rgba(255,255,255,.55);
+}
+.dl-bar-wrap{
+  flex:1;max-width:160px;
+  height:4px;
+  background:rgba(255,255,255,.15);
+  border-radius:2px;
+  overflow:hidden;
+  align-self:center;
+}
+.dl-bar-fill{
+  height:100%;
+  background:linear-gradient(90deg,#4AE28A,#1B8A52);
+  border-radius:2px;
+  transition:width .5s ease;
+}
+
+/* ══════════════════════════════════════════════
+   EMPTY STATE
+══════════════════════════════════════════════ */
+#empty{
+  display:none;
+  grid-column:1/-1;
+  text-align:center;padding:60px 20px;
+  color:var(--muted);
+}
+#empty .big{font-size:48px;margin-bottom:12px}
+#empty p{font-size:15px}
+
+/* ══════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════ */
 @media(max-width:640px){
@@ -641,6 +698,25 @@ body{
     </div>
   </div>
 </header>
+
+<!-- ═══════════════════ DEADLINE ═══════════════════ -->
+<div class="deadline-strip" id="deadline-strip">
+  <div class="dl-left">
+    🎯 Meta:&nbsp;<strong>viernes 3 de julio</strong>
+  </div>
+  <div class="dl-bar-wrap">
+    <div class="dl-bar-fill" id="dl-bar" style="width:0%"></div>
+  </div>
+  <div class="dl-center">
+    <span class="dl-days" id="dl-days">—</span>
+    <span class="dl-days-lbl">días restantes</span>
+  </div>
+  <div class="dl-right">
+    <span class="dl-prog" id="dl-prog">0 / 54 publicados</span>
+    <span class="dl-meta" id="dl-meta"></span>
+  </div>
+</div>
+
 <div class="progress-bar-wrap">
   <div class="progress-bar-fill" id="prog" style="width:0%"></div>
 </div>
@@ -2820,12 +2896,12 @@ function togglePublicado(id){
     const stripe = card.querySelector('.card-stripe');
     const btnDone = card.querySelector('.btn-done');
     if(STATE[id]){
-      stripe && (stripe.style.background='linear-gradient(90deg,#22c55e,#16a34a)');
+      stripe && (stripe.style.background='linear-gradient(90deg,#1B8A52,#00C86A)');
       btnDone && (btnDone.innerHTML = IC_CHECK + ' Publicado');
     } else {
       const base = card.dataset.sfoto==='1'
         ? 'linear-gradient(90deg,#F59E0B,#D97706)'
-        : 'linear-gradient(90deg,#001E50,#00B0F0)';
+        : 'linear-gradient(90deg,#1A3560,#4183C4)';
       stripe && (stripe.style.background=base);
       btnDone && (btnDone.innerHTML = IC_CIRCLE + ' Marcar pub.');
     }
@@ -2848,11 +2924,39 @@ function updateStats(){
   document.getElementById('s-pend').textContent  = pend;
   document.getElementById('s-sfoto').textContent = sf;
   document.getElementById('s-stock').textContent = stock;
+  updateDeadline();
 }
 function updateProgress(){
   const pub = Object.values(STATE).filter(Boolean).length;
   const pct = Math.round(pub/DB.length*100);
   document.getElementById('prog').style.width = pct+'%';
+}
+function updateDeadline(){
+  const deadline = new Date('2026-07-04T00:00:00');
+  const now      = new Date();
+  const days     = Math.max(0, Math.ceil((deadline - now) / 86400000));
+  const pub      = Object.values(STATE).filter(Boolean).length;
+  const pend     = DB.length - pub;
+  const pct      = Math.round(pub / DB.length * 100);
+
+  const el = (id) => document.getElementById(id);
+  if(el('dl-days')) el('dl-days').textContent = days;
+  if(el('dl-prog')) el('dl-prog').textContent = `${pub} / ${DB.length} publicados`;
+  if(el('dl-bar'))  el('dl-bar').style.width  = pct + '%';
+
+  let meta = '';
+  if(days === 0 && pub < DB.length)       meta = `${pend} artículo${pend!==1?'s':''} sin publicar`;
+  else if(pub >= DB.length)               meta = '¡Todo publicado! 🎉';
+  else if(days > 0){
+    const perDay = Math.ceil(pend / days);
+    meta = `≈ ${perDay} artículo${perDay!==1?'s':''}/día para terminar`;
+  }
+  if(el('dl-meta')) el('dl-meta').textContent = meta;
+
+  const strip = el('deadline-strip');
+  if(strip){
+    strip.className = 'deadline-strip' + (days <= 2 ? ' urgent' : days <= 5 ? ' warning' : '');
+  }
 }
 
 // ════════════════════════════════════════════════════════
